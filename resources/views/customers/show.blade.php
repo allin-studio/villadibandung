@@ -28,6 +28,30 @@
     <link rel="stylesheet" href="{{ asset('csss/style.css') }}">
 
 	<title>VILLA &mdash; BANDUNG </title>
+	<style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+		.img-property-slide {
+    		display: flex;
+		}
+
+		.img-property-slide td {
+			flex: 1;
+			padding: 10px;
+		}
+
+		.vila-image {
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+		}
+		.p {
+			font-size: 40px;
+		}
+    </style>
+	
 </head>
 <body>
 
@@ -47,26 +71,7 @@
 					<a href="index.html" class="logo m-0 float-start">Villaadibandung.</a>
 
 					<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
-						<li class="active"><a href="index.html">Home</a></li>
-						<li class="has-children">
-							<a href="properties.html">Villa</a>
-							<ul class="dropdown">
-								<li><a href="#">Buy Villa</a></li>
-								<li><a href="#">Sell Villa</a></li>
-								<li class="has-children">
-									<a href="#">Dropdown</a>
-									<ul class="dropdown">
-										<li><a href="#">Sub Menu One</a></li>
-										<li><a href="#">Sub Menu Two</a></li>
-										<li><a href="#">Sub Menu Three</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li><a href=" properties.html">Services</a></li>
-						<li><a href=" properties.html">About</a></li>
-						<li><a href=" properties.html">Contact Us</a></li>
-					</ul>
+						<li class="active"><a href="{{ route('customers.index')}}">Kembali</a></li>
 
 					<a href="#" class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
 						<span></span>
@@ -107,22 +112,42 @@
 				<div class="col-lg-7">
 					<div class="img-property-slide-wrap">
 						<div class="img-property-slide">
-							<img src="{{ asset('images/sq1.jpg') }}" alt="Image" class="img-fluid">
-							<img src="{{ asset('images/sq2.jpg') }}" alt="Image" class="img-fluid">
-							<img src="{{ asset('images/sq3.jpg') }}" alt="Image" class="img-fluid">
+						@foreach ($vila->foto as $photo)
+           				 <img src="{{ asset('storage/' . $photo) }}" alt="{{ $vila->nama_vila }}" class="vila-image">
+       				 @endforeach
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-4">
+					<br>
 					<h2 class="heading text-primary">{{ $vila->nama_vila }}, {{ $vila->lokasi }}</h2>
 					<p class="meta">{{ $vila->alamat_lengkap }}</p>
-                    <h3 class="heading text-primary">Rp {{ number_format($vila->harga, 2, ',', '.') }}/Hari</h3>
-                    <p class="text-black-50"><span class="icon-bed me-2"></span>{{ $vila->jumlah_kasur }}</p>
-                    <p class="text-black-50"><span class="icon-bath me-2"></span>{{ $vila->jumlah_kamar_mandi }} kamar mandi</p>
-                    <p class="text-black-50"><span class="icon-people me-2"></span>{{ $vila->kapasitas }}</p>
-					<p class="text-black-50">{{ $vila->deskripsi }}</p>
-					<p class="text-black-50">{{ $vila->fasilitas }}</p>
+					<script>
+				var today = new Date();
+				var dayOfWeek = today.getDay(); // Mendapatkan hari dalam bentuk angka (0 = Minggu, 1 = Senin, dst.)
 
+				function isWeekend(day) {
+					return day === 0 || day === 6; // Hari 0 (Minggu) dan 6 (Sabtu) adalah akhir pekan
+				}
+			</script>
+			@php
+				$dayOfWeek = date('N'); // Mendapatkan hari dalam bentuk angka (1 = Senin, 2 = Selasa, dst.)
+			@endphp
+
+			<h3 class="heading text-primary">
+				@if ($dayOfWeek >= 6) <!-- Jika akhir pekan -->
+					Rp {{ number_format($vila->harga_weekend, 2, ',', '.') }}/Hari (Weekend)
+				@else <!-- Jika hari biasa -->
+					Rp {{ number_format($vila->harga, 2, ',', '.') }}/Hari (Weekday)
+				@endif
+			</h3>  
+			        <p class="text-black-50 fs-5"><span class="icon-bed me-2"></span>{{ $vila->jumlah_kasur }}</p>
+					<p class="text-black-50 fs-5"><span class="icon-bath me-2"></span>{{ $vila->jumlah_kamar_mandi }} kamar mandi</p>
+                    <p class="text-black-50 fs-5"><span class="icon-people me-2"></span>{{ $vila->kapasitas }}</p>
+					<p class="text-black-50 fs-5">{{ $vila->deskripsi }}</p>
+					<p class="text-black-50 fs-5">{{ $vila->fasilitas }}</p>
+					<div id="map">
+        
                     <a href="{{ route('createBookingForm', ['id' => $vila->id]) }}" class="btn btn-primary">Booking</a>
 
 				<!--
@@ -151,64 +176,16 @@
 		</div>
 	</div>
 	<div class="site-footer">
-		<div class="container">
+		<div class="container-fluid">
+			<iframe
+            width="100%"
+            height="500"
+            frameborder="0"
+            style="border:0"
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984.9863036149047!2d107.61685331627347!3d-6.917463068308546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f57dd25bd92b%3A0x520d22f2f3d6e108!2sKota%20Bandung%2C%20Jawa%20Barat!5e0!3m2!1sen!2sid!4v1627891618821!5m2!1sen!2sid"
+            allowfullscreen
+        ></iframe>
 			
-			<div class="row">
-				<div class="col-lg-4">
-					<div class="widget">
-						<h3>Contact</h3>
-						<address>Jl. Ir Djuanda, Kota Bandung </address>
-						<ul class="list-unstyled links">
-							<li><a href="tel://11234567890">+62(022)-456-7890</a></li>
-							<li><a href="tel://11234567890">+62 85462548526</a></li>
-							<li><a href="mailto:info@mydomain.com">info@viladibandung.com</a></li>
-						</ul>
-					</div> <!-- /.widget -->
-				</div> <!-- /.col-lg-4 -->
-				<div class="col-lg-4">
-					<div class="widget">
-						<h3>Sources</h3>
-						<ul class="list-unstyled float-start links">
-							<li><a href="#">About us</a></li>
-							<li><a href="#">Services</a></li>
-							<li><a href="#">Vision</a></li>
-							<li><a href="#">Mission</a></li>
-							<li><a href="#">Terms</a></li>
-							<li><a href="#">Privacy</a></li>
-						</ul>
-						<ul class="list-unstyled float-start links">
-							<li><a href="#">Partners</a></li>
-							<li><a href="#">Business</a></li>
-							<li><a href="#">Careers</a></li>
-							<li><a href="#">Blog</a></li>
-							<li><a href="#">FAQ</a></li>
-							<li><a href="#">Creative</a></li>
-						</ul>
-					</div> <!-- /.widget -->
-				</div> <!-- /.col-lg-4 -->
-				<div class="col-lg-4">
-					<div class="widget">
-						<h3>Links</h3>
-						<ul class="list-unstyled links">
-							<li><a href="#">Our Vision</a></li>
-							<li><a href="#">About us</a></li>
-							<li><a href="#">Contact us</a></li>
-						</ul>
-
-						<ul class="list-unstyled social">
-							<li><a href="#"><span class="icon-instagram"></span></a></li>
-							<li><a href="#"><span class="icon-twitter"></span></a></li>
-							<li><a href="#"><span class="icon-facebook"></span></a></li>
-							<li><a href="#"><span class="icon-linkedin"></span></a></li>
-							<li><a href="#"><span class="icon-pinterest"></span></a></li>
-							<li><a href="#"><span class="icon-dribbble"></span></a></li>
-						</ul>
-					</div> <!-- /.widget -->
-				</div> <!-- /.col-lg-4 -->
-			</div> <!-- /.row -->
-
-			<div class="row mt-5">
-				<div class="col-12 text-center">
 					<!-- 
               **==========
               NOTE: 

@@ -55,6 +55,7 @@ Route::get('/vila/{id}/edit', [VilaController::class, 'edit'])->name('vila.edit'
 Route::put('/vila/{id}', [VilaController::class, 'update'])->name('vila.update');
 Route::delete('/vila/{id}', [VilaController::class, 'destroy'])->name('vila.destroy');
 Route::get('/vilas/{vila}', [VilaController::class, 'show'])->name('vilas.show');
+Route::get('/vilas/filter', 'VilaController@filter')->name('customers.filter');
 
 Route::get('/booking/{id}', [BookingController::class, 'booking'])->name('bookingVilla');
 Route::get('/booking/form/{id}', [BookingController::class, 'showBookingForm'])->name('createBookingForm');
@@ -78,7 +79,14 @@ Route::put('/pegawai/{id}', [PegawaiController::class, 'update'])->name('pegawai
 Route::delete('/pegawai/{id}', [PegawaiController::class, 'destroy'])->name('pegawai.destroy');
 
 use App\Http\Controllers\CustomerController;
+Route::get('/customers/filter-harga', [CustomerController::class, 'showFilterHarga'])->name('customers.filterHarga');
+Route::get('/customers/filter-lokasi', [CustomerController::class, 'showFilterLokasi'])->name('customers.filterLokasi');
+
+Route::get('/customers/filter', [CustomerController::class, 'filter'])->name('customers.filter');
+Route::get('/customers/all', [CustomerController::class, 'showAll'])->name('customers.all');
+Route::get('/customers/filterr', [CustomerController::class, 'filterr'])->name('customers.filterr');
 Route::get('/customers', [CustomerController::class, 'index'])->name('customers.index');
+Route::get('/all', [CustomerController::class, 'all'])->name('customers.all');
 Route::prefix('customers')->group(function () {
     Route::get('vilas/{id}', [CustomerController::class, 'show'])->name('customers.vilas.show');
 });
@@ -102,3 +110,29 @@ Route::get('vilas/{id}/booking', 'BookingController@showBookingForm')->name('cus
 // Simpan data pemesanan
 Route::post('vilas/{id}/booking', 'BookingController@storeBooking')->name('customers.vilas.storeBooking');
 Route::post('/booking', 'BookingController@store')->name('customers.vilas.storeBooking');
+
+
+use App\Http\Controllers\ReviewController;
+Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
+Route::get('/review/create', [ReviewController::class, 'create'])->name('reviews.create');
+Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store');
+Route::delete('/reviews/{id}', 'ReviewController@destroy')->name('reviews.destroy');
+Route::delete('/reviews/{id}', [ReviewController::class, 'destroy'])->name('reviews.destroy');
+
+use App\Http\Controllers\PeraturanController;
+Route::get('/peraturan', [PeraturanController::class, 'index'])->name('peraturan.index');
+Route::get('/peraturan/create', [PeraturanController::class, 'create'])->name('peraturan.create');
+Route::post('/peraturan', [PeraturanController::class, 'store'])->name('peraturan.store');
+Route::get('/peraturan/{id}/edit', [PeraturanController::class, 'edit'])->name('peraturan.edit');
+Route::delete('/peraturan/{id}', [PeraturanController::class, 'destroy'])->name('peraturan.destroy');
+Route::put('/peraturan/{id}', [PeraturanController::class, 'update'])->name('peraturan.update');
+
+use App\Http\Controllers\PeraturanDagoController;
+Route::resource('peraturans2', PeraturanDagoController::class);
+Route::get('/peraturan', [PeraturanController::class, 'index'])->name('peraturan.index');
+Route::get('/peraturan/create', [PeraturanController::class, 'create'])->name('peraturan.create');
+Route::post('/peraturan', [PeraturanController::class, 'store'])->name('peraturan.store');
+Route::get('/peraturan/{id}/edit', [PeraturanController::class, 'edit'])->name('peraturan.edit');
+Route::delete('/peraturan/{id}', [PeraturanController::class, 'destroy'])->name('peraturan.destroy');
+Route::put('/peraturan/{id}', [PeraturanController::class, 'update'])->name('peraturan.update');
+

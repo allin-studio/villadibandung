@@ -27,7 +27,6 @@ class PegawaiController extends Controller
 
         $pegawai = User::findOrFail($id);
         $pegawai->update($request->all());
-
         return redirect()->route('pegawai.index')->with('success', 'Data pegawai berhasil diperbarui.');
     }
 

@@ -146,35 +146,38 @@
     }
 </style>
 
-<h1>Daftar Admin</h1>
-<a href="{{ route('pegawai.create') }}" class="btn btn-primary">Tambah Data Admin</a>
+<h1>Review Customers</h1>
+<a href="{{ route('reviews.create') }}" class="btn btn-primary">Add Review</a>
+
 <br>
 <br>
 <table>
         <thead>
-        <tr>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>Tanggal Dibuat</th>
-                <th>Aksi</th>
+            <tr>
+                <th>Nomor</th>
+                <th>Photo</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-        @foreach ($pegawai as $user)
-        <tr>
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td>{{ $user->created_at }}</td>
-                    <td>
-                   
-                        <form action="{{ route('pegawai.destroy', $user->id) }}" method="POST">
-                            <a href="{{ route('pegawai.edit', $user->id) }}" class="edit-btn">Edit</a>
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="delete-btn">Hapus</button>
-                        </form>
-                    </td>
-                </tr>
+            @foreach($reviews as $index => $review)
+            <tr>
+                <td>{{ $index + 1 }}</td>
+                <td>
+                    @if($review->photo)
+                        <img src="{{ asset('photos/' . $review->photo) }}" alt="Review Photo" class="img-thumbnail" style="max-width: 100px;">
+                    @else
+                        No Photo
+                    @endif
+                </td>
+                <td>
+                <form action="{{ route('reviews.destroy', $review->id) }}" method="POST" class="d-inline">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this review?')">Delete</button>
+    </form>
+                </td>
+            </tr>
             @endforeach
         </tbody>
     </table>
@@ -186,44 +189,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
     @include('sweetalert::alert')
-    <script>
-    // Ambil referensi tombol "Pesan"
-    const pesanButton = document.querySelector('.submit-btn');
 
-    // Tambahkan event listener untuk menghentikan aksi default form dan menampilkan notifikasi
-    pesanButton.addEventListener('click', function(event) {
-        event.preventDefault(); // Mencegah pengiriman form
-
-        // Tampilkan notifikasi menggunakan SweetAlert
-        Swal.fire({
-            title: 'Pesanan Berhasil',
-            text: 'Apakah Anda ingin informasi lebih lanjut ?',
-            icon: 'question',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Ya, kirim pesan melalui Whatsapp!',
-            cancelButtonText: 'Batal'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // Tampilkan kotak dialog SweetAlert dengan tombol untuk pergi ke halaman chat wa
-                Swal.fire({
-                    title: 'Pesan berhasil!',
-                    text: 'Klik OK untuk pergi ke halaman chat WhatsApp.',
-                    icon: 'success',
-                    showCancelButton: false,
-                    confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        // Redirect ke halaman chat WA
-                        window.location.href = "https://api.whatsapp.com/send?phone=0895633996833";
-                    }
-                });
-            }
-        });
-    });
-</script>
 
   </body>
 </html>

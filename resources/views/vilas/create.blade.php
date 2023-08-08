@@ -141,10 +141,13 @@
         </div>
 
         <div class="col-md-6">
-            <label for="harga" class="form-tabel">Harga</label>
-            <input type="text" name="harga" id="harga" placeholder="Rp 1.000.000,- per malam" required>
+            <label for="harga" class="form-tabel">Harga/Hari Weekday</label>
+            <input type="text" name="harga" id="harga" placeholder="1000000" required>
             </div>
-
+            <div class="col-md-6">
+            <label for="harga" class="form-tabel">Harga/Hari Weekend</label>
+            <input type="text" name="harga_weekend" id="harga" placeholder="1000000" required>
+            </div>
 
         <div class="col-md-3">
          <label for="foto">Foto</label>

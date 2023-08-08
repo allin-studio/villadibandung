@@ -140,11 +140,25 @@
                     <a href="vila"><span class="fa fa-building mr-3"></span> Villa Management</a>
                 </li>
                 <li>
-                    <a href="{{ route('booking.index') }}"><span class="fa fa-users mr-3"></span> Data Transaksi</a>
+                    <a href="{{ route('booking.index') }}"><span class="fa fa-book mr-3"></span> Data Transaksi</a>
                   </li>
                 <li>
                 <a href="pegawai"><span class="fa fa-briefcase mr-3"></span> Admin</a>
                 </li>
+                <li>
+                  <a a href="{{ route('reviews.index') }}"><span class="fa fa-star mr-3"></span>Review</a>
+	             </li>
+                 <li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expended="false">
+				<span class="fa fa-warning mr-3"></span> Peraturan Villa </a>
+			  <ul class="dropdown-menu" role="menu" style="background-color: #055555;">
+			  	<li><a href="{{ route('peraturan.index') }}" style="color: #fff;">Villa Lembang</a></li>
+				<li><a href="{{ route('peraturans2.index') }}" style="color: #fff;">Villa Dago</a></li>
+			  </ul>
+			 </li>
+             <li>
+              <a a href="{{ route('customers.index') }}"><span class="fa fa-users mr-3"></span>Cust Page</a>
+	          </li>
                 <li>
                 <a href="{{ route('logout') }}"><span class="fa fa-sign-out mr-3"></span> Logout</a>
                 </li>
@@ -155,7 +169,6 @@
             <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
             <h2 class="mb-4">@if(auth()->check())
-        <p>Selamat datang, {{ auth()->user()->name }}</p>
     @else
         <p>Silahkan login untuk melihat halaman ini.</p>
     @endif</h2>
@@ -207,15 +220,15 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Vila</th>
-                    <th>Nama Customer</th>
-                    <th>Email</th>
-                    <th>Alamat</th>
-                    <th>No Telepon</th>
                     <th>Tanggal Booking</th>
+                    <th>Nama Customer</th>
+                    <th>Vila</th>
+                    <th>No Telepon</th>
+                    <th>Jumlah Tamu</th>
                     <th>Check In</th>
                     <th>Check Out</th>
                     <th>Total Bayar</th>
+                    <th>Catatan</th>
                     <th>Aksi</th> <!-- Kolom untuk tombol aksi -->
                 </tr>
             </thead>
@@ -223,6 +236,8 @@
             @foreach ($transaksi as $index => $booking)
                     <tr>
                         <td>{{ $index + 1 }}</td>
+                        <td>{{ $booking->waktu_dibuat }}</td>
+                        <td>{{ $booking->nama_lengkap }}</td>
                         <td>
                             @if ($booking->vila)
                                 {{ $booking->vila->nama_vila }}
@@ -230,14 +245,15 @@
                                 Data vila tidak ditemukan
                             @endif
                         </td>
-                        <td>{{ $booking->nama_lengkap }}</td>
-                        <td>{{ $booking->email }}</td>
-                        <td>{{ $booking->alamat }}</td>
                         <td>{{ $booking->notelp }}</td>
-                        <td>{{ $booking->waktu_dibuat }}</td>
+                        <td>Dewasa = {{ $booking->jumlah_dewasa }} orang<br>
+                        Anak-anak = {{ $booking->jumlah_anak }} orang<br>
+                        Balita = {{ $booking->jumlah_balita }} orang<br>
+                        Total = {{ $booking->email }} orang</td>
                         <td>{{ $booking->check_in }}</td>
                         <td>{{ $booking->check_out }}</td>
                         <td>Rp {{ number_format($booking->total_bayar, 2, ',', '.') }}</td>
+                        <td>{{ $booking->alamat }}</td>
                         <td>
                         <form action="{{ route('booking.destroy', $booking->id) }}" method="POST" class="delete-form" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
                     <a href="{{ route('booking.edit', $booking->id) }}" class="edit-btn">Edit</a>
@@ -259,5 +275,6 @@
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
+        @include('sweetalert::alert')
     </body>
     </html>

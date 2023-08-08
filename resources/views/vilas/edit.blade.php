@@ -137,10 +137,14 @@
             </div>
     
             <div class="col-md-3">
-                <label for="harga" class="form-label">Harga</label>
+                <label for="harga" class="form-label">Harga Weekday</label>
                 <input type="text" name="harga" id="harga" value="{{ $vila->harga }}" required>
             </div>
-    
+
+            <div class="col-md-3">
+                <label for="harga" class="form-label">Harga Weekend</label>
+                <input type="text" name="harga_weekend" id="harga_weekend" value="{{ $vila->harga_weekend }}" required>
+            </div>
             <!-- Existing photos -->
             <div class="col-md-3">
             <h3>Foto-foto saat ini:</h3>

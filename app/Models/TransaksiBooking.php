@@ -16,6 +16,9 @@ class TransaksiBooking extends Model
         'check_out',
         'total_bayar',
         'metode_pembayaran',
+        'jumlah_dewasa',
+        'jumlah_anak',
+        'jumlah_balita',
         // Definisi atribut lainnya sesuai kebutuhan
     ];
 

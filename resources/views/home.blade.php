@@ -37,10 +37,26 @@
 	              <a href="vila"><span class="fa fa-building mr-3"></span> Villa Management</a>
 	          </li>
 			  <li>
-				<a href="{{ route('booking.index') }}"><span class="fa fa-users mr-3"></span> Data Transaksi</a>
+				<a href="{{ route('booking.index') }}"><span class="fa fa-book mr-3"></span> Data Transaksi</a>
 			  </li>
 	          <li>
               <a a href="{{ route('pegawai.index') }}"><span class="fa fa-briefcase mr-3"></span>Admin</a>
+	          </li>
+              <li>
+			  <li>
+              <a a href="{{ route('reviews.index') }}"><span class="fa fa-star mr-3"></span>Review</a>
+	          </li>
+			  <li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expended="false">
+				<span class="fa fa-warning mr-3"></span> Peraturan Villa </a>
+			  <ul class="dropdown-menu" role="menu" style="background-color: #055555;">
+			  	<li><a href="{{ route('peraturan.index') }}" style="color: #fff;">Villa Lembang</a></li>
+				<li><a href="{{ route('peraturans2.index') }}" style="color: #fff;">Villa Dago</a></li>
+			  </ul>
+			 </li>
+	          </li>
+			  <li>
+              <a a href="{{ route('customers.index') }}"><span class="fa fa-users mr-3"></span>Cust Page</a>
 	          </li>
               <li>
               <a href="{{ route('logout') }}"><span class="fa fa-sign-out mr-3"></span> Logout</a>
@@ -52,11 +68,10 @@
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
         <h2 class="mb-4">@if(auth()->check())
-    <p>Selamat datang, {{ auth()->user()->name }}</p>
 @else
     <p>Silahkan login untuk melihat halaman ini.</p>
 @endif</h2>
-        <p>Vila adalah jenis properti atau bangunan hunian yang umumnya berukuran besar dan mewah. Vila biasanya berdiri sendiri di atas lahan yang luas dan dikelilingi oleh taman atau kebun yang indah. Istilah "vila" berasal dari bahasa Latin "villa," yang awalnya mengacu pada sebuah rumah pedesaan atau tempat tinggal di luar kota pada zaman Romawi kuno..</p>
+        <p >Vila adalah jenis properti atau bangunan hunian yang umumnya berukuran besar dan mewah. Vila biasanya berdiri sendiri di atas lahan yang luas dan dikelilingi oleh taman atau kebun yang indah. Istilah "vila" berasal dari bahasa Latin "villa," yang awalnya mengacu pada sebuah rumah pedesaan atau tempat tinggal di luar kota pada zaman Romawi kuno..</p>
 		<p>Vila sering dianggap sebagai tempat liburan atau tempat peristirahatan yang ideal, karena menyediakan ruang lebih banyak daripada rumah biasa dan menawarkan privasi yang lebih tinggi. Fasilitas yang umumnya ada di vila meliputi beberapa kamar tidur, kamar mandi, ruang keluarga, dapur, kolam renang pribadi, area bersantai di luar ruangan, dan bahkan fasilitas rekreasi atau olahraga tertentu.</p>
 		<p>Sifat mewah dan eksklusif dari vila sering kali membuatnya menjadi pilihan populer bagi wisatawan kelas atas, keluarga besar yang ingin berkumpul, atau untuk acara-acara spesial seperti pernikahan atau acara bisnis. Vila juga dapat dijadikan investasi properti yang menguntungkan dengan menyewakannya kepada wisatawan atau pengunjung untuk mendapatkan pendapatan tambahan.</p>
 	

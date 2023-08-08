@@ -7,6 +7,8 @@ use App\Models\Vila;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Booking;
+use Illuminate\Support\Carbon;
+
 
 
 class BookingController extends Controller
@@ -26,27 +28,38 @@ class BookingController extends Controller
         $vila = Vila::findOrFail($id);
         return view('customers.booking', compact('vila'));
     }
+    private function isWeekend(\DateTime $date)
+{
+    return $date->format('N') >= 5; // Sabtu memiliki nilai 6 dan Minggu memiliki nilai 7 dalam format ISO-8601 (1 = Senin, 2 = Selasa, dst.)
+}
     public function createBooking(Request $request)
     {
         // Validasi data
         $request->validate([
             'villa_id' => 'required|exists:vilas,id',
             'nama_lengkap' => 'required',
-            'email' => 'required|email',
+            'email' => 'required',
             'alamat' => 'required',
             'notelp' => 'required',
             'check_in' => 'required|date',
             'check_out' => 'required|date|after:check_in',
             'metode_pembayaran' => 'required',
+            'jumlah_dewasa' => 'required|integer|min:0',
+            'jumlah_anak' => 'required|integer|min:0',
+            'jumlah_balita' => 'required|integer|min:0',
             // Tambahkan aturan validasi lainnya sesuai kebutuhan
         ]);
 
         // Hitung total bayar
         $villa = Vila::findOrFail($request->villa_id);
-        $checkInDate = new \DateTime($request->check_in);
-        $checkOutDate = new \DateTime($request->check_out);
-        $diffDays = $checkOutDate->diff($checkInDate)->days;
-        $totalBayar = $villa->harga * $diffDays;
+    $checkInDate = Carbon::createFromFormat('Y-m-d', $request->check_in);
+    $checkOutDate = Carbon::createFromFormat('Y-m-d', $request->check_out);
+    $diffDays = $checkOutDate->diffInDays($checkInDate); // Tambahkan 1 hari karena termasuk hari check-out
+
+    // Tentukan harga yang akan digunakan berdasarkan weekday atau weekend
+    $harga = $this->isWeekend($checkInDate) ? $villa->harga_weekend : $villa->harga;
+
+    $totalBayar = $harga * $diffDays;
 
         // Simpan data pemesanan ke tabel transaksi_booking
         $transaksiBooking = new TransaksiBooking([
@@ -59,12 +72,15 @@ class BookingController extends Controller
             'check_out' => $request->check_out,
             'total_bayar' => $totalBayar,
             'metode_pembayaran' => $request->metode_pembayaran,
+            'jumlah_dewasa' => $request->jumlah_dewasa,
+            'jumlah_anak' => $request->jumlah_anak,
+            'jumlah_balita' => $request->jumlah_balita,
             // Tambahkan kolom lainnya sesuai kebutuhan
         ]);
         $transaksiBooking->save();
 
         // Redirect pengguna kembali ke halaman index atau halaman pemesanan sukses
-        return redirect()->route('customers.index')->with('success', 'Pemesanan villa berhasil! Terima kasih telah memesan villa.');
+        return redirect()->route('customers.index')->with('wa_message', 'Terima kasih telah memesan villa! Klik tombol di bawah ini untuk chat via WhatsApp.');
     }
     public function update(Request $request, $id)
     {

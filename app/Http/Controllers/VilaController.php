@@ -13,7 +13,8 @@ class VilaController extends Controller
     {
         $vilas = vila::all();
         return view('vilas.index', compact('vilas'));
-        
+        $vilaList = Vila::all(); // Gantikan dengan cara mengambil data vila sesuai model Anda
+        return view('all.index', compact('vilaList'));
     }
 
     // Menampilkan formulir create vila

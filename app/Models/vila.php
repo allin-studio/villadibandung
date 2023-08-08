@@ -28,6 +28,7 @@ class Vila extends Model
         'harga',
         'foto',
         'jumlah_kamar_mandi',
+        'harga_weekend',
     ];
 
     // Jika kolom id tidak berformat integer, tambahkan properti berikut
