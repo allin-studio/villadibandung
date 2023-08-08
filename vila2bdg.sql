@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 31, 2023 at 11:19 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Waktu pembuatan: 07 Agu 2023 pada 21.32
+-- Versi server: 10.4.28-MariaDB
+-- Versi PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admins`
+-- Struktur dari tabel `admins`
 --
 
 CREATE TABLE `admins` (
@@ -37,7 +37,7 @@ CREATE TABLE `admins` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `failed_jobs`
+-- Struktur dari tabel `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -53,7 +53,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `login`
+-- Struktur dari tabel `login`
 --
 
 CREATE TABLE `login` (
@@ -64,7 +64,7 @@ CREATE TABLE `login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `login`
+-- Dumping data untuk tabel `login`
 --
 
 INSERT INTO `login` (`id`, `nama`, `username`, `password`) VALUES
@@ -73,7 +73,7 @@ INSERT INTO `login` (`id`, `nama`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Struktur dari tabel `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -83,7 +83,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Dumping data untuk tabel `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -99,12 +99,20 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (17, '2023_07_28_092406_create_bookings_table', 5),
 (18, '2023_07_28_094058_create_bookings_table', 6),
 (19, '2023_07_30_164741_create_transaksi_booking_table', 7),
-(20, '2023_07_31_030415_add_updated_at_to_transaksi_booking_table', 8);
+(20, '2023_07_31_030415_add_updated_at_to_transaksi_booking_table', 8),
+(21, '2023_08_04_112458_add_harga_weekend_to_vilas', 9),
+(22, '2023_08_04_133749_create_reviews_table', 10),
+(23, '2023_08_04_165451_create_peraturans_table', 11),
+(24, '2023_08_07_125137_create_peraturans2_table', 12),
+(25, '2023_08_07_132502_create_peraturandagos_table', 13),
+(26, '2023_08_07_150506_add_guest_columns_to_vilas', 14),
+(27, '2023_08_07_150801_add_guest_columns_to_transaksi_booking', 15),
+(28, '2023_08_07_153425_add_guest_columns_to_transaksi_booking', 16);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Struktur dari tabel `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -116,7 +124,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pemesanan_vilas`
+-- Struktur dari tabel `pemesanan_vilas`
 --
 
 CREATE TABLE `pemesanan_vilas` (
@@ -135,7 +143,64 @@ CREATE TABLE `pemesanan_vilas` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personal_access_tokens`
+-- Struktur dari tabel `peraturandagos`
+--
+
+CREATE TABLE `peraturandagos` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `isi` text NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `peraturandagos`
+--
+
+INSERT INTO `peraturandagos` (`id`, `isi`, `created_at`, `updated_at`) VALUES
+(2, 'asa', '2023-08-07 06:41:00', '2023-08-07 06:42:22');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `peraturans`
+--
+
+CREATE TABLE `peraturans` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `isi` text NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `peraturans`
+--
+
+INSERT INTO `peraturans` (`id`, `isi`, `created_at`, `updated_at`) VALUES
+(3, 'Jaminan ketersediaan Villa bisa dipastikan setelah DP minimal 50% dari total biaya menginap.', '2023-08-04 10:18:22', '2023-08-04 10:57:23'),
+(4, 'Memberikan Foto KTP pada saat reservasi dan menyimpan KTP asli selama menginap.', '2023-08-04 10:18:32', '2023-08-04 10:58:41'),
+(5, 'Penggunaan Villa untuk PESTA, ULANG TAHUN, PERNIKAHAN, AKAD, dan ACARA, TIDAK Diperbolehkan.', '2023-08-04 11:00:03', '2023-08-04 11:00:03'),
+(6, 'Jumlah Kendaraan dilarang melebihi batas yang ditentukan.', '2023-08-04 11:00:31', '2023-08-04 11:00:31'),
+(7, 'Dilarang membawa sound system, organ tunggal, dan alat musik lainnya.', '2023-08-04 11:10:36', '2023-08-04 11:10:36');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `peraturans2`
+--
+
+CREATE TABLE `peraturans2` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `isi` text NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -153,7 +218,30 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaksi_booking`
+-- Struktur dari tabel `reviews`
+--
+
+CREATE TABLE `reviews` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `photo`, `created_at`, `updated_at`) VALUES
+(4, '1691158612.jpeg', '2023-08-04 07:16:52', '2023-08-04 07:16:52'),
+(5, '1691159415.jpeg', '2023-08-04 07:30:15', '2023-08-04 07:30:15'),
+(7, '1691162396.jpeg', '2023-08-04 08:19:56', '2023-08-04 08:19:56'),
+(8, '1691162415.jpeg', '2023-08-04 08:20:15', '2023-08-04 08:20:15');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `transaksi_booking`
 --
 
 CREATE TABLE `transaksi_booking` (
@@ -169,27 +257,25 @@ CREATE TABLE `transaksi_booking` (
   `metode_pembayaran` varchar(255) NOT NULL,
   `waktu_dibuat` timestamp NULL DEFAULT NULL,
   `waktu_diupdate` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `jumlah_dewasa` int(11) NOT NULL,
+  `jumlah_anak` int(11) NOT NULL,
+  `jumlah_balita` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `transaksi_booking`
+-- Dumping data untuk tabel `transaksi_booking`
 --
 
-INSERT INTO `transaksi_booking` (`id`, `id_villa`, `nama_lengkap`, `email`, `alamat`, `notelp`, `check_in`, `check_out`, `total_bayar`, `metode_pembayaran`, `waktu_dibuat`, `waktu_diupdate`, `updated_at`) VALUES
-(1, 17, 'ardii fajar maulanaq', 'ardi@gmail.com', 'wkjfkqwfgqw', '08987654321', '2024-01-01', '2024-01-02', '500000.00', 'transfer_bank', '2023-07-30 11:27:50', '2023-07-30 11:27:50', '2023-07-31 01:25:50'),
-(5, 18, 'a', 'admin@gmail.com', 'a', '08765432158', '2024-01-01', '2024-01-03', '1180000.00', 'transfer_bank', '2023-07-30 11:33:33', '2023-07-30 11:33:33', NULL),
-(6, 19, 'b', 'b@gmail.com', 'b', '08956231478', '2024-01-05', '2024-01-08', '3000000.00', 'transfer_bank', '2023-07-30 11:35:21', '2023-07-30 11:35:21', NULL),
-(10, 18, 'ardi aja', 'apaajalah@gmail.com', 'dimana weh', '0898744564211', '2023-08-01', '2023-08-02', '590000.00', 'transfer_bank', '2023-07-30 20:47:41', '2023-07-30 20:47:41', NULL),
-(11, 17, 'alllinstudio', 'allinstudio@gmail.com', 'Jl.cilengkrang', '087212121123', '2023-07-31', '2023-08-01', '500000.00', 'kartu_kredit', '2023-07-30 22:38:46', '2023-07-30 22:38:46', NULL),
-(12, 18, 'petrik', 'allinstudio@gmail.com', 'cigugur tengah', '1000000', '2023-07-31', '2023-08-01', '590000.00', 'kartu_kredit', '2023-07-30 23:36:10', '2023-07-30 23:36:10', NULL),
-(13, 18, 'rizkyaaa', 'rizkyayahya13@gmail.com', 'cigugur tengah', '087822611896', '2023-08-01', '2023-08-02', '590000.00', 'kartu_kredit', '2023-07-30 23:52:42', '2023-07-30 23:52:42', NULL),
-(14, 17, 'asep uho', 'asepuho12@gmail.com', 'Jl.cigugur tengah', '082115149955', '2023-08-01', '2023-08-02', '500000.00', 'kartu_kredit', '2023-07-31 00:06:15', '2023-07-31 00:06:15', NULL);
+INSERT INTO `transaksi_booking` (`id`, `id_villa`, `nama_lengkap`, `email`, `alamat`, `notelp`, `check_in`, `check_out`, `total_bayar`, `metode_pembayaran`, `waktu_dibuat`, `waktu_diupdate`, `updated_at`, `jumlah_dewasa`, `jumlah_anak`, `jumlah_balita`) VALUES
+(39, 28, 'a', '5', 'q', '2222222222', '2023-01-02', '2023-01-03', 100000.00, 'transfer_bank', '2023-08-07 08:48:38', '2023-08-07 08:48:38', NULL, 1, 3, 1),
+(40, 25, 'a', '16', 'asda', '121212', '2023-01-02', '2023-01-04', 250.00, 'transfer_bank', '2023-08-07 08:54:08', '2023-08-07 08:54:08', NULL, 12, 1, 3),
+(41, 18, 'asep permana', '6', '-', '08987654321', '2023-08-08', '2023-08-09', 590000.00, 'transfer_bank', '2023-08-07 11:17:16', '2023-08-07 11:17:16', NULL, 2, 1, 3);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -204,18 +290,19 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'putri', 'admin@gmail.com', NULL, '$2y$10$36LhArkLghKyOCDLy86GZ.5jQEVQX1OQ/ExxVMG0G4gKywd0QQjV.', NULL, '2023-07-25 00:23:44', '2023-07-29 04:55:30'),
 (3, 'ALLINSTUDIO', 'allinstudio@gmail.com', NULL, '$2y$10$uuSlW.BTxQpEDxWJoYSFXO09p87.9FC0bVNWY1dM8HdbUoEfLHJ5.', NULL, '2023-07-25 10:33:35', '2023-07-25 10:33:35'),
-(4, 'spongebob', 'petrik123@gmail.com', NULL, '$2y$10$uoMBrfjvjvr2zB.50AxdSOzApoIweIJ73hiYOTjDq8VgZaluaK8ja', NULL, '2023-07-28 11:36:35', '2023-07-28 11:38:04');
+(4, 'spongebob', 'petrik123@gmail.com', NULL, '$2y$10$uoMBrfjvjvr2zB.50AxdSOzApoIweIJ73hiYOTjDq8VgZaluaK8ja', NULL, '2023-07-28 11:36:35', '2023-07-28 11:38:04'),
+(5, 'as', 'as@gmail.com', NULL, '$2y$10$bEKJSNyCU/HYLImP7ElSSOYvlUTW0E24Phdzej8gLEJb6g1chEg9u', NULL, '2023-08-04 06:42:23', '2023-08-04 06:42:23');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vilas`
+-- Struktur dari tabel `vilas`
 --
 
 CREATE TABLE `vilas` (
@@ -228,6 +315,7 @@ CREATE TABLE `vilas` (
   `kapasitas` varchar(255) NOT NULL,
   `fasilitas` text NOT NULL,
   `harga` decimal(10,2) NOT NULL,
+  `harga_weekend` decimal(10,2) DEFAULT NULL,
   `foto` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`foto`)),
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -235,64 +323,79 @@ CREATE TABLE `vilas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `vilas`
+-- Dumping data untuk tabel `vilas`
 --
 
-INSERT INTO `vilas` (`id`, `nama_vila`, `alamat_lengkap`, `lokasi`, `deskripsi`, `jumlah_kasur`, `kapasitas`, `fasilitas`, `harga`, `foto`, `created_at`, `updated_at`, `jumlah_kamar_mandi`) VALUES
-(17, 'Villa Naonn', 'kp salak busuk', 'kuburan', 'horor abiss', 'keranda', '1 orang', 'cari sendiri', '500000.00', '[\"vila_photos\\/0QswuQXPIMGoD633VolncVP7KyS8NHVKLMCO7M5o.jpg\"]', '2023-07-28 00:45:07', '2023-07-31 01:51:37', 3),
-(18, 'villa teu kahajaa', 'poho deui', 'poho nyaeta', 'bebas asal sopan', '2 kasur king, 1 kasur single bad', '5 orang', 'secukupnya', '590000.00', '[\"vila_photos\\/dIXYATEACTFpwIXpG5QQAJ4lm8ll5XIUcrh8NfJo.jpg\"]', '2023-07-28 00:46:19', '2023-07-30 07:14:57', 3),
-(19, 'vila lapang bola', 'gedebage', 'depan masjid al jabbar', 'luas', '5 kasur besar 2 kasur kecil', '100 orang', 'bebas', '1000000.00', '[\"vila_photos\\/732R4CU39bacryziaiECDl98CszZQ0ksJ59vCfT1.jpg\",\"vila_photos\\/nw9oLpSa66H8hvyoZDxjHYGapE1YIQwtgSkzCFcT.jpg\",\"vila_photos\\/ZUkRjOTPpr56ZFmY1GgXIOCJZF7metLqnpNw880b.jpg\"]', '2023-07-28 00:47:24', '2023-07-28 00:47:24', 3),
-(20, 'Villa Itenas', 'Jl.Pahlawan', 'Cikutra', 'teuing', 'Kamar 2 Ruang tamu 1', '3', 'Boleh ngerokok', '159.00', '[\"vila_photos\\/wxlxD9IoadqtOX3jKFK9liOev7jd7cedDqCCLjkP.jpg\"]', '2023-07-28 11:25:15', '2023-07-28 11:25:15', 2),
-(21, 'Villa Amburadul', 'Astana anyar', 'Tegalega', 'teuing', 'Kamar 2 Ruang tamu 1', '1', 'kompor', '1259999.00', '[\"vila_photos\\/wLVxnlAkjuVSVl4kpvQr33OSyHLQ6WnYGRAeCh4K.jpg\"]', '2023-07-28 11:32:48', '2023-07-28 11:32:49', 1),
-(22, 'Villa Acaw', 'Jl.pesantren', 'cimahi', 'awawd', 'Kamar 2 Ruang tamu 1', '1', 'Meroko', '123456.00', '[\"vila_photos\\/QAAd4Br1jxcxhzF5D0kpPskWb63WOl8FWLB4wcRw.jpg\"]', '2023-07-29 00:46:37', '2023-07-29 00:46:37', 2),
-(23, 'Vilaause', 'cigugur tengah', 'Ciwaruga', 'tidak tahu', 'Kamar 2 Ruang tamu 1', '2', 'Masak', '700.00', '[\"vila_photos\\/Xv2aWUALcGUBBG0Mw5dtAAd4OgyQV8fUyTUSoRNW.jpg\"]', '2023-07-30 05:31:17', '2023-07-30 05:31:17', 1),
-(25, 'Villa Bandung', 'Jl.Aceh', 'Bandung', 'daadawd', 'Kamar 2 Ruang tamu 1', '2', 'Meroko', '125.00', '[\"vila_photos\\/V3pFAWjS0wjwGEW1StxLDVceRfW6nsqbGnWogutq.jpg\",\"vila_photos\\/FltI62u3xW0ryxvMyIrBUHfH2ngExvlCV2LSg6ap.jpg\",\"vila_photos\\/imH24CGCjlt2TCyRNQ38RbMChdrdn1HAx9jhhSR3.jpg\",\"vila_photos\\/jyNVYmWsOT2By7kHJwF0qxppf0GyXH0zglVuvgCe.jpg\"]', '2023-07-30 07:16:02', '2023-07-30 07:16:02', 2);
+INSERT INTO `vilas` (`id`, `nama_vila`, `alamat_lengkap`, `lokasi`, `deskripsi`, `jumlah_kasur`, `kapasitas`, `fasilitas`, `harga`, `harga_weekend`, `foto`, `created_at`, `updated_at`, `jumlah_kamar_mandi`) VALUES
+(18, 'villa teu kahajaa', 'poho deui', 'poho nyaeta', 'bebas asal sopan', '2 kasur king, 1 kasur single bad', '5 orang', 'secukupnya', 590000.00, 600000.00, '[\"vila_photos\\/dIXYATEACTFpwIXpG5QQAJ4lm8ll5XIUcrh8NfJo.jpg\"]', '2023-07-28 00:46:19', '2023-07-30 07:14:57', 3),
+(22, 'Villa Acaw', 'Jl.pesantren', 'cimahi', 'awawd', 'Kamar 2 Ruang tamu 1', '1', 'Meroko', 123456.00, NULL, '[\"vila_photos\\/QAAd4Br1jxcxhzF5D0kpPskWb63WOl8FWLB4wcRw.jpg\"]', '2023-07-29 00:46:37', '2023-07-29 00:46:37', 2),
+(23, 'Vilaause', 'cigugur tengah', 'Ciwaruga', 'tidak tahu', 'Kamar 2 Ruang tamu 1', '2', 'Masak', 700.00, NULL, '[\"vila_photos\\/Xv2aWUALcGUBBG0Mw5dtAAd4OgyQV8fUyTUSoRNW.jpg\"]', '2023-07-30 05:31:17', '2023-07-30 05:31:17', 1),
+(25, 'Villa Bandung', 'Jl.Aceh', 'Dago', 'daadawd', 'Kamar 2 Ruang tamu 1', '2', 'Meroko', 125.00, 150.00, '[\"vila_photos\\/V3pFAWjS0wjwGEW1StxLDVceRfW6nsqbGnWogutq.jpg\",\"vila_photos\\/FltI62u3xW0ryxvMyIrBUHfH2ngExvlCV2LSg6ap.jpg\",\"vila_photos\\/imH24CGCjlt2TCyRNQ38RbMChdrdn1HAx9jhhSR3.jpg\",\"vila_photos\\/jyNVYmWsOT2By7kHJwF0qxppf0GyXH0zglVuvgCe.jpg\"]', '2023-07-30 07:16:02', '2023-08-07 05:15:05', 2),
+(28, 'Villa Malam', 'jl subang nannjak no 70', 'Lembang', 'Vila nyaman dan bebas dah', '2 kasur king, 1 kasur single bad', '5 orang', 'lengkap', 100000.00, 175000.00, '[\"vila_photos\\/JNmMMWiJCMX925mYJMkFPTzuzWtE33YexBHVMWgE.png\"]', '2023-08-04 05:33:22', '2023-08-07 05:14:29', 2);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admins`
+-- Indeks untuk tabel `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `admins_user_id_unique` (`user_id`);
 
 --
--- Indexes for table `failed_jobs`
+-- Indeks untuk tabel `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Indexes for table `login`
+-- Indeks untuk tabel `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migrations`
+-- Indeks untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `password_resets`
+-- Indeks untuk tabel `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indexes for table `pemesanan_vilas`
+-- Indeks untuk tabel `pemesanan_vilas`
 --
 ALTER TABLE `pemesanan_vilas`
   ADD PRIMARY KEY (`id`),
   ADD KEY `pemesanan_vilas_vila_id_foreign` (`vila_id`);
 
 --
--- Indexes for table `personal_access_tokens`
+-- Indeks untuk tabel `peraturandagos`
+--
+ALTER TABLE `peraturandagos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `peraturans`
+--
+ALTER TABLE `peraturans`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `peraturans2`
+--
+ALTER TABLE `peraturans2`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -300,95 +403,125 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indexes for table `transaksi_booking`
+-- Indeks untuk tabel `reviews`
+--
+ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `transaksi_booking`
 --
 ALTER TABLE `transaksi_booking`
   ADD PRIMARY KEY (`id`),
   ADD KEY `transaksi_booking_id_villa_foreign` (`id_villa`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- Indexes for table `vilas`
+-- Indeks untuk tabel `vilas`
 --
 ALTER TABLE `vilas`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `admins`
+-- AUTO_INCREMENT untuk tabel `admins`
 --
 ALTER TABLE `admins`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `failed_jobs`
+-- AUTO_INCREMENT untuk tabel `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `login`
+-- AUTO_INCREMENT untuk tabel `login`
 --
 ALTER TABLE `login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT for table `pemesanan_vilas`
+-- AUTO_INCREMENT untuk tabel `pemesanan_vilas`
 --
 ALTER TABLE `pemesanan_vilas`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `personal_access_tokens`
+-- AUTO_INCREMENT untuk tabel `peraturandagos`
+--
+ALTER TABLE `peraturandagos`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `peraturans`
+--
+ALTER TABLE `peraturans`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT untuk tabel `peraturans2`
+--
+ALTER TABLE `peraturans2`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `transaksi_booking`
+-- AUTO_INCREMENT untuk tabel `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT untuk tabel `transaksi_booking`
 --
 ALTER TABLE `transaksi_booking`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `vilas`
+-- AUTO_INCREMENT untuk tabel `vilas`
 --
 ALTER TABLE `vilas`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `pemesanan_vilas`
+-- Ketidakleluasaan untuk tabel `pemesanan_vilas`
 --
 ALTER TABLE `pemesanan_vilas`
   ADD CONSTRAINT `pemesanan_vilas_vila_id_foreign` FOREIGN KEY (`vila_id`) REFERENCES `vilas` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `transaksi_booking`
+-- Ketidakleluasaan untuk tabel `transaksi_booking`
 --
 ALTER TABLE `transaksi_booking`
   ADD CONSTRAINT `transaksi_booking_id_villa_foreign` FOREIGN KEY (`id_villa`) REFERENCES `vilas` (`id`) ON DELETE CASCADE;
