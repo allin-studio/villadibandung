@@ -9,8 +9,6 @@ use Illuminate\Support\Facades\Redirect;
 use App\Models\Booking;
 use Illuminate\Support\Carbon;
 
-
-
 class BookingController extends Controller
 {
     public function index()
