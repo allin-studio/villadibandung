@@ -361,7 +361,7 @@
 				<div class="col-lg-4">
 					<div class="widget">
 						<h3>Contact</h3>
-						<address>Jl. Ir Djuanda, Kota Bandung </address>
+						<address>Jl. Ir Djuanda, Kota Bandung dago</address>
 						<ul class="list-unstyled links">
 							<li><a href="tel://11234567890">+62(022)-456-7890</a></li>
 							<li><a href="tel://11234567890">+62 85462548526</a></li>
