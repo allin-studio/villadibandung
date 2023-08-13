@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Vila;
+use App\Models\vila;
 use App\Models\Review;
 use App\Models\Peraturan;
 use App\Models\PeraturanDago;
@@ -12,18 +12,18 @@ class CustomerController extends Controller
 {
     public function all()
 {
-    $vilas = Vila::all(); // Villa adalah model yang merepresentasikan data villa
+    $vilas = vila::all(); // Villa adalah model yang merepresentasikan data villa
     
     return view('customers.all', compact('vilas'));
 }
 public function showAll()
 {
-    $vilas = Vila::all();
+    $vilas = vila::all();
     return view('customers.all', compact('vilas'));
 }
 public function filter(Request $request)
 {
-    $query = Vila::query();
+    $query = vila::query();
 
     if ($request->has('harga_min') && $request->has('harga_max')) {
         $query->whereBetween('harga', [$request->input('harga_min'), $request->input('harga_max')]);
@@ -37,7 +37,7 @@ public function filter(Request $request)
 }
 public function filterr(Request $request)
 {
-    $query = Vila::query();
+    $query = vila::query();
 
     if ($request->has('lokasi')) {
         $query->where('lokasi', 'like', '%' . $request->input('lokasi') . '%');
@@ -51,7 +51,7 @@ public function filterr(Request $request)
 }
     public function index()
     {
-        $vilas = Vila::all();
+        $vilas = vila::all();
         $reviews = Review::all();
         $peraturans = Peraturan::all();
         $peraturandagos = PeraturanDago::all();
@@ -60,20 +60,20 @@ public function filterr(Request $request)
     }
     public function show($id)
     {
-        $vila = Vila::findOrFail($id);
-        $vilas = Vila::all();
+        $vila = vila::findOrFail($id);
+        $vilas = vila::all();
         return view('customers.show', compact('vila','vilas'));
     }
-    public function showBookingForm(Vila $vila)
+    public function showBookingForm(vila $vila)
     {
         return view('customers.booking')->with('vila', $vila);
     }
-    public function booking(Vila $vila)
+    public function booking(vila $vila)
     {
         return view('customers.booking', compact('vila'))->with('success', 'Data vila telah ditambahkan.');;
     }
     public function showSingleProperty($id) {
-        $villa = Vila::find($id);
+        $villa = vila::find($id);
     
         if (!$villa) {
             abort(404); // atau Anda bisa menangani kasus jika properti tidak ditemukan
