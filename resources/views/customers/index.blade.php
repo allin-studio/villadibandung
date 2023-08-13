@@ -375,18 +375,12 @@
 						<ul class="list-unstyled float-start links">
 							<li><a href="#">About us</a></li>
 							<li><a href="#">Services</a></li>
-							<li><a href="#">Vision</a></li>
-							<li><a href="#">Mission</a></li>
-							<li><a href="#">Terms</a></li>
-							<li><a href="#">Privacy</a></li>
+
 						</ul>
 						<ul class="list-unstyled float-start links">
 							<li><a href="#">Partners</a></li>
 							<li><a href="#">Business</a></li>
-							<li><a href="#">Careers</a></li>
-							<li><a href="#">Blog</a></li>
-							<li><a href="#">FAQ</a></li>
-							<li><a href="#">Creative</a></li>
+
 						</ul>
 					</div> <!-- /.widget -->
 				</div> <!-- /.col-lg-4 -->
@@ -394,7 +388,6 @@
 					<div class="widget">
 						<h3>Links</h3>
 						<ul class="list-unstyled links">
-							<li><a href="#">Our Vision</a></li>
 							<li><a href="#">About us</a></li>
 							<li><a href="#">Contact us</a></li>
 						</ul>
