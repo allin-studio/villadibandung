@@ -8,22 +8,22 @@ use App\Models\Vila;
 
 class VilaController extends Controller
 {
-    // Menampilkan daftar vila
+    // Menampilkan daftar Vila
     public function index()
     {
-        $vilas = vila::all();
+        $vilas = Vila::all();
         return view('vilas.index', compact('vilas'));
-        $vilaList = Vila::all(); // Gantikan dengan cara mengambil data vila sesuai model Anda
+        $vilaList = Vila::all(); // Gantikan dengan cara mengambil data Vila sesuai model Anda
         return view('all.index', compact('vilaList'));
     }
 
-    // Menampilkan formulir create vila
+    // Menampilkan formulir create Vila
     public function create()
     {
         return view('vilas.create');
     }
 
-    // Menyimpan data vila ke database
+    // Menyimpan data Vila ke database
     public function store(Request $request)
     {
         $request->validate([
@@ -42,7 +42,7 @@ class VilaController extends Controller
         $vilaData = $request->except('foto');
 
         // Upload foto ke direktori storage dan ambil pathnya
-        $vila = Vila::create($vilaData);
+        $Vila = Vila::create($vilaData);
 
         // Proses foto-foto yang diunggah dan simpan ke dalam kolom "foto"
         if ($request->hasFile('foto')) {
@@ -51,34 +51,34 @@ class VilaController extends Controller
                 $photoPath = $photo->storePublicly('vila_photos', 'public'); // Ganti menjadi storePublicly
                 $photoPaths[] = $photoPath;
             }
-            $vila->foto = $photoPaths;
-            $vila->save();
+            $Vila->foto = $photoPaths;
+            $Vila->save();
         }
 
-        return redirect()->route('vila.index')->with('success', 'Data vila telah ditambahkan.');
+        return redirect()->route('Vila.index')->with('success', 'Data Vila telah ditambahkan.');
     }
 
-    // Menampilkan detail vila
+    // Menampilkan detail Vila
     public function show($id)
     {
-        $vila = Vila::findOrFail($id);
-        return view('vilas.show', compact('vila'));
-        return view('customers.show', compact('vila'));
+        $Vila = Vila::findOrFail($id);
+        return view('vilas.show', compact('Vila'));
+        return view('customers.show', compact('Vila'));
 
     }
 
-    // Menampilkan formulir edit vila
+    // Menampilkan formulir edit Vila
     public function edit($id)
     {
-        $vila = Vila::findOrFail($id);
+        $Vila = Vila::findOrFail($id);
 
-        return view('vilas.edit', compact('vila'));
+        return view('vilas.edit', compact('Vila'));
     }
 
-    // Fungsi untuk mengupdate data vila
+    // Fungsi untuk mengupdate data Vila
     public function update(Request $request, $id)
     {
-        $vila = Vila::findOrFail($id);
+        $Vila = Vila::findOrFail($id);
 
         $request->validate([
             'nama_vila' => 'required',
@@ -105,17 +105,17 @@ class VilaController extends Controller
             $vilaData['foto'] = $photoPaths;
         }
 
-        // Update data vila
-        $vila->update($vilaData);
+        // Update data Vila
+        $Vila->update($vilaData);
 
-        return redirect()->route('vila.index')->with('success', 'Data vila telah diperbarui.');
+        return redirect()->route('Vila.index')->with('success', 'Data Vila telah diperbarui.');
     }
 
     public function destroy($id)
     {
         Vila::destroy($id);
 
-        return redirect()->route('vila.index')->with('success', 'Data vila telah dihapus.');
+        return redirect()->route('Vila.index')->with('success', 'Data Vila telah dihapus.');
     }
     public function booking($id)
     {
