@@ -65,10 +65,6 @@
                 <input type="text" class="form-control" id="nama_vila" name="nama_vila" required>
             </div>
             <div class="form-group">
-                <label for="alamat_lengkap">Alamat Lengkap</label>
-                <input type="text" class="form-control" id="alamat_lengkap" name="alamat_lengkap" required>
-            </div>
-            <div class="form-group">
                 <label for="lokasi">Lokasi</label>
                 <input type="text" class="form-control" id="lokasi" name="lokasi" required>
             </div>

@@ -35,10 +35,6 @@
             <td>{{ $vila->lokasi }}</td>
           </tr>
           <tr>
-            <th scope="row">Alamat Lengkap</th>
-            <td>{{ $vila->alamat_lengkap }}</td>
-          </tr>
-          <tr>
             <th scope="row">Harga</th>
             <td>Rp {{ number_format($vila->harga, 2, ',', '.') }}</td>
           </tr>

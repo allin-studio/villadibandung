@@ -175,7 +175,6 @@
 							<div class="property-content">
 								<div class="price mb-2"><span>{{ $vila->nama_vila }}</span></div>
 								<div>
-									<span class="d-block mb-2 text-black-50">{{ $vila->alamat_lengkap }}</span>
 									<span class="city d-block mb-3">{{ $vila->lokasi }}</span>
 									<!-- Tampilkan data lainnya seperti jumlah kasur, jumlah kamar mandi, dll. -->
 									<div class="specs d-flex mb-4">
@@ -453,7 +452,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     // Redirect ke halaman chat WA
-                    window.location.href = "https://api.whatsapp.com/send?phone=6281323961402&text=Halo%2C%20saya%20tertarik%20untuk%20mengetahui%20lebih%20lanjut%20tentang%20villa%20Anda.%20Apakah%20saya%20dapat%20mendapatkan%20informasi%20ketersediaan%20dan%20harga%3F";
+                    window.location.href = "https://api.whatsapp.com/send?phone=6281323961402&text=Terima%20Kasih%20telah%20memesan%20Villadibandung!%20No%20Booking%20{{session('no_booking') }}";
                 }
             });
         @endif

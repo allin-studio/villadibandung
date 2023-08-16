@@ -229,6 +229,7 @@
                     <th>Check Out</th>
                     <th>Total Bayar</th>
                     <th>Catatan</th>
+                    <th>No Booking</th>
                     <th>Aksi</th> <!-- Kolom untuk tombol aksi -->
                 </tr>
             </thead>
@@ -254,6 +255,7 @@
                         <td>{{ $booking->check_out }}</td>
                         <td>Rp {{ number_format($booking->total_bayar, 2, ',', '.') }}</td>
                         <td>{{ $booking->alamat }}</td>
+                        <td>{{$booking->no_booking}}</td>
                         <td>
                         <form action="{{ route('booking.destroy', $booking->id) }}" method="POST" class="delete-form" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
                     <a href="{{ route('booking.edit', $booking->id) }}" class="edit-btn">Edit</a>

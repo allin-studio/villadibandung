@@ -73,12 +73,19 @@ class BookingController extends Controller
             'jumlah_dewasa' => $request->jumlah_dewasa,
             'jumlah_anak' => $request->jumlah_anak,
             'jumlah_balita' => $request->jumlah_balita,
+            'no_booking' => $this->autonumber()
             // Tambahkan kolom lainnya sesuai kebutuhan
         ]);
         $transaksiBooking->save();
 
         // Redirect pengguna kembali ke halaman index atau halaman pemesanan sukses
-        return redirect()->route('customers.index')->with('wa_message', 'Terima kasih telah memesan villadibandung.com ! Klik tombol di bawah ini untuk verifikasi booking anda via WhatsApp.');
+        $data = array(
+            'wa_message' => 'Terima kasih telah memesan villa! Klik tombol di bawah ini untuk chat via WhatsApp.',
+            'no_booking' => $transaksiBooking->no_booking
+        );
+
+        // Redirect pengguna kembali ke halaman index atau halaman pemesanan sukses
+        return redirect()->route('customers.index')->with($data);
     }
     public function update(Request $request, $id)
     {
@@ -125,5 +132,20 @@ class BookingController extends Controller
 
         // Redirect ke halaman index setelah berhasil dihapus
         return redirect()->route('booking.index')->with('success', 'Data booking berhasil dihapus.');
+    }
+    public function autonumber() {
+        $last = Booking::orderBy("waktu_dibuat", "DESC")->first();
+        $number = 1;
+        if ($last != null) {
+            $number = intval(substr($last->no_booking, -2)) + 1;
+        }
+    
+        $number = str_pad($number, 2, "0", STR_PAD_LEFT);
+    
+        $current_date = date("d");
+        $current_month = date("m");
+        $current_year = date("Y");
+    
+        return $current_year . $current_month . $current_date .  $number;
     }
 }

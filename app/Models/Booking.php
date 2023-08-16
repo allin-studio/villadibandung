@@ -24,5 +24,6 @@ class Booking extends Model
         'check_out',
         'metode_pembayaran',
         'total_bayar',
+        'no_booking',
     ];
 }

@@ -85,6 +85,21 @@
         border: 1px solid #ddd;
         border-radius: 5px;
     }
+
+    .checkbox-container {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .checkbox-label {
+        display: flex;
+        align-items: center;
+    }
+
+    .checkbox-input {
+        margin-right: 5px;
+    }
 </style>
 <!-- resources/views/vilas/create.blade.php -->
 <div class="container-fluid">
@@ -100,16 +115,9 @@
         @csrf
         <div class="row mb-3">
         <div class="col-md-6">
-        <label for="nama_vila" class="form-label">Nama Vila:</label>
+        <label for="nama_vila" class="form-label">Nama Villa:</label>
         <input type="text" name="nama_vila" placeholder="Villa Cikole" required>
         </div>
-
-
-        <div class="col-md-6">
-        <label for="alamat_lengkap" class="form-label">Alamat Lengkap:</label>
-        <input type="text" name="alamat_lengkap" placeholder="Jl. Raya Cikole No. 123, Bandung" required>
-        </div>
-        
 
         <div class="col-md-6">
             <label for="lokasi" class="form-label">Lokasi:</label>
@@ -159,29 +167,29 @@
         <div class="col-md-6">
         <label for="fasilitas" class="form-tabel">Fasilitas</label>
         <textarea name="fasilitas" id="fasilitas" rows="4"required>
-        •Barbeque Set
-        •Carport
-        •Ruang Keluarga
-        •Ruang Makan & Dapur
-        •Kolam Renang Anak
+        • Barbeque Set
+        • Carport
+        • Ruang Keluarga
+        • Ruang Makan & Dapur
+        • Kolam Renang Anak
         </textarea>
         </div>
 
         <div class="col-md-6">
             <label for="harga" class="form-tabel">Harga/Hari Weekday</label>
             <input type="text" name="harga" id="harga" placeholder="1000000" required>
-            </div>
-            <div class="col-md-6">
+        </div>
+                
+        <div class="col-md-6">
             <label for="harga" class="form-tabel">Harga/Hari Weekend</label>
             <input type="text" name="harga_weekend" id="harga" placeholder="1000000" required>
-            </div>
+        </div>
 
-        <div class="col-md-3">
+        <div class="col-md-6">
          <label for="foto">Foto</label>
         <input type="file" name="foto[]" id="foto" multiple required>
         <br>
         </div>
-        <br>
         <button type="submit" class="submit-btn" class="form-tabel">Simpan</button>
         <a href="{{ route('vila.index') }}" class="cancel-btn" class="form-tabel">Cancel</a>
     </form>
@@ -189,4 +197,6 @@
 </div>
 </div>
 @endsection
+
+
 

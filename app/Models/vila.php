@@ -19,7 +19,6 @@ class Vila extends Model
     // Kolom-kolom yang dapat diisi secara massal (mass assignable)
     protected $fillable = [
         'nama_vila',
-        'alamat_lengkap',
         'lokasi',
         'deskripsi',
         'jumlah_kasur',

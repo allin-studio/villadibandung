@@ -121,7 +121,6 @@
 				<div class="col-lg-4">
 					<br>
 					<h2 class="heading text-primary">{{ $vila->nama_vila }}, {{ $vila->lokasi }}</h2>
-					<p class="meta">{{ $vila->alamat_lengkap }}</p>
 					<script>
 				var today = new Date();
 				var dayOfWeek = today.getDay(); // Mendapatkan hari dalam bentuk angka (0 = Minggu, 1 = Senin, dst.)

@@ -178,7 +178,6 @@
 								<div class="card-body">
 									<h4 class="card-title">{{ $vila->nama_vila }} <h5 class="card-text"><span class="icon-money me-1"></span>Rp {{ number_format($vila->harga, 2, ',', '.') }}/Hari</h5>
 </h4>
-									<p class="card-text">{{ $vila->alamat_lengkap }}</p>
 									<p class="card-text">{{ $vila->lokasi }}</p>
 									<p class="card-text"><span class="icon-bed me-1"></span>{{ $vila->jumlah_kasur }}</p>
 									<p class="card-text"><span class="icon-bath me-1"></span>{{ $vila->jumlah_kamar_mandi }} kamar mandi</p>

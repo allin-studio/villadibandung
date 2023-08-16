@@ -186,7 +186,6 @@
                 <tr>
                     <th>Gambar</th>
                     <th>Nama Villa</th>
-                    <th>Alamat</th>
                     <th>Lokasi</th>
                     <th>Harga Weekday</th>
                     <th>Harga Weekend</th>
@@ -205,7 +204,6 @@
                 @endif
                         </td>
                         <td>{{ $vila->nama_vila }}</td>
-                        <td>{{ $vila->alamat_lengkap }}</td>
                         <td>{{ $vila->lokasi }}</td>
                         <td>Rp {{ number_format($vila->harga, 2, ',', '.') }}</td>
                         <td>Rp {{ number_format($vila->harga_weekend, 2, ',', '.') }}</td>

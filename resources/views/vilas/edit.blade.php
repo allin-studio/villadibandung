@@ -102,11 +102,6 @@
             </div>
     
             <div class="col-md-6">
-                <label for="alamat_lengkap" class="form-label">Alamat Lengkap</label>
-                <input type="text" name="alamat_lengkap" id="alamat_lengkap" value="{{ $vila->alamat_lengkap }}" required>
-            </div>
-    
-            <div class="col-md-6">
                 <label for="lokasi" class="form-label">Lokasi:</label>
                 <select name="lokasi" id="lokasi" required>
                     <option value="Lembang">Lembang</option>
@@ -120,7 +115,7 @@
             </div>
     
             <div class="col-md-6">
-                <label for="jumlah_kasur" class="form-label">Deskripsi Kasur:</label>
+                <label for="jumlah_kasur" class="form-label">Jumlah Kasur:</label>
                 <select name="jumlah_kasur" id="jumlah_kasur" required>
                     <option value="Bedroom 1">Bedroom 1</option>
                     <option value="Bedroom 2">Bedroom 2</option>
