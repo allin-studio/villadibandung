@@ -82,7 +82,7 @@
 		<div class="container">
 			<div class="menu-bg-wrap">
 				<div class="site-navigation">
-					<a href="index" class="logo m-0 float-start">Villa di Bandung</a>
+					<a href="index" class="logo m-0 float-start">Villa Bandung</a>
 
 					<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
 						<li class="active"><a href="#home" id="home">Home</a></li>
@@ -273,7 +273,7 @@
 		<div class="row justify-content-center footer-cta" data-aos="fade-up">
 			<div class="col-lg-7 mx-auto text-center">
 				<h2 class="mb-4 ">Hubungi Kami Villa Bandung</h2>
-				<p><a href="https://api.whatsapp.com/send?phone=087825858343&text=Hallo%20Saya%20Baik" target="_blank" class="btn btn-primary text-white py-3 px-4" id="contact">Apply for Villa agent</a></p>
+				<p><a href="https://api.whatsapp.com/send?phone=+6281289578657&text=Hallo%20admin,%20saya%20telah%20booking%20melalui%20villadibandung.com,%20dengan%20nama" target="_blank" class="btn btn-primary text-white py-3 px-4" id="contact">Apply for Villa agent</a></p>
 			</div> <!-- /.col-lg-7 -->
 		</div> <!-- /.row -->
 	</div>

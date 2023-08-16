@@ -194,7 +194,7 @@
         tr = table.getElementsByTagName('tr');
 
         for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName('td')[2]; // Ubah angka 1 sesuai dengan indeks kolom Vila pada tabel
+            td = tr[i].getElementsByTagName('td')[2]; // Ubah angka 1 sesuai dengan indeks kolom vila pada tabel
             if (td) {
                 txtValue = td.textContent || td.innerText;
                 if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -222,7 +222,7 @@
                     <th>No</th>
                     <th>Tanggal Booking</th>
                     <th>Nama Customer</th>
-                    <th>Vila</th>
+                    <th>vila</th>
                     <th>No Telepon</th>
                     <th>Jumlah Tamu</th>
                     <th>Check In</th>

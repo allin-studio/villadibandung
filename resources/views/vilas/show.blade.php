@@ -57,7 +57,7 @@
         </tbody>
         </table>
     <div class="col-md-3">
-    <a href="{{ route('vila.index') }}" class="btn btn-primary">Kembali ke Daftar Vila</a>
+    <a href="{{ route('vila.index') }}" class="btn btn-primary">Kembali ke Daftar vila</a>
     </div>
 @endsection
 

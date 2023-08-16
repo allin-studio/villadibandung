@@ -100,7 +100,7 @@
         @csrf
         <div class="row mb-3">
         <div class="col-md-6">
-        <label for="nama_vila" class="form-label">Nama Vila:</label>
+        <label for="nama_vila" class="form-label">Nama vila:</label>
         <input type="text" name="nama_vila" placeholder="Villa Cikole" required>
         </div>
 
@@ -116,7 +116,7 @@
 
         <div class="col-md-6">
         <label for="deskripsi" class="form-label">Deskripsi:</label>
-        <textarea name="deskripsi" placeholder="Vila nyaman dengan pemandangan alam yang indah" required></textarea>
+        <textarea name="deskripsi" placeholder="vila nyaman dengan pemandangan alam yang indah" required></textarea>
         </div>
 
         <div class="col-md-6">

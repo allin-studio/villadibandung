@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\TransaksiBooking;
-use App\Models\Vila;
+use App\Models\vila;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Booking;
@@ -18,12 +18,12 @@ class BookingController extends Controller
     }
     public function showBookingForm($id)
     {
-        $vila = Vila::findOrFail($id);
+        $vila = vila::findOrFail($id);
         return view('customers.booking', compact('vila'));
     }
     public function createBookingForm($id)
     {
-        $vila = Vila::findOrFail($id);
+        $vila = vila::findOrFail($id);
         return view('customers.booking', compact('vila'));
     }
     private function isWeekend(\DateTime $date)
@@ -49,7 +49,7 @@ class BookingController extends Controller
         ]);
 
         // Hitung total bayar
-        $villa = Vila::findOrFail($request->villa_id);
+        $villa = vila::findOrFail($request->villa_id);
     $checkInDate = Carbon::createFromFormat('Y-m-d', $request->check_in);
     $checkOutDate = Carbon::createFromFormat('Y-m-d', $request->check_out);
     $diffDays = $checkOutDate->diffInDays($checkInDate); // Tambahkan 1 hari karena termasuk hari check-out

@@ -331,7 +331,7 @@ INSERT INTO `vilas` (`id`, `nama_vila`, `alamat_lengkap`, `lokasi`, `deskripsi`,
 (22, 'Villa Acaw', 'Jl.pesantren', 'cimahi', 'awawd', 'Kamar 2 Ruang tamu 1', '1', 'Meroko', 123456.00, NULL, '[\"vila_photos\\/QAAd4Br1jxcxhzF5D0kpPskWb63WOl8FWLB4wcRw.jpg\"]', '2023-07-29 00:46:37', '2023-07-29 00:46:37', 2),
 (23, 'Vilaause', 'cigugur tengah', 'Ciwaruga', 'tidak tahu', 'Kamar 2 Ruang tamu 1', '2', 'Masak', 700.00, NULL, '[\"vila_photos\\/Xv2aWUALcGUBBG0Mw5dtAAd4OgyQV8fUyTUSoRNW.jpg\"]', '2023-07-30 05:31:17', '2023-07-30 05:31:17', 1),
 (25, 'Villa Bandung', 'Jl.Aceh', 'Dago', 'daadawd', 'Kamar 2 Ruang tamu 1', '2', 'Meroko', 125.00, 150.00, '[\"vila_photos\\/V3pFAWjS0wjwGEW1StxLDVceRfW6nsqbGnWogutq.jpg\",\"vila_photos\\/FltI62u3xW0ryxvMyIrBUHfH2ngExvlCV2LSg6ap.jpg\",\"vila_photos\\/imH24CGCjlt2TCyRNQ38RbMChdrdn1HAx9jhhSR3.jpg\",\"vila_photos\\/jyNVYmWsOT2By7kHJwF0qxppf0GyXH0zglVuvgCe.jpg\"]', '2023-07-30 07:16:02', '2023-08-07 05:15:05', 2),
-(28, 'Villa Malam', 'jl subang nannjak no 70', 'Lembang', 'Vila nyaman dan bebas dah', '2 kasur king, 1 kasur single bad', '5 orang', 'lengkap', 100000.00, 175000.00, '[\"vila_photos\\/JNmMMWiJCMX925mYJMkFPTzuzWtE33YexBHVMWgE.png\"]', '2023-08-04 05:33:22', '2023-08-07 05:14:29', 2);
+(28, 'Villa Malam', 'jl subang nannjak no 70', 'Lembang', 'vila nyaman dan bebas dah', '2 kasur king, 1 kasur single bad', '5 orang', 'lengkap', 100000.00, 175000.00, '[\"vila_photos\\/JNmMMWiJCMX925mYJMkFPTzuzWtE33YexBHVMWgE.png\"]', '2023-08-04 05:33:22', '2023-08-07 05:14:29', 2);
 
 --
 -- Indexes for dumped tables
