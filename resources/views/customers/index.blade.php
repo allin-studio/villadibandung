@@ -82,7 +82,7 @@
 		<div class="container">
 			<div class="menu-bg-wrap">
 				<div class="site-navigation">
-					<a href="index" class="logo m-0 float-start">Villa Bandung.</a>
+					<a href="index" class="logo m-0 float-start">Villa di Bandung</a>
 
 					<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
 						<li class="active"><a href="#home" id="home">Home</a></li>
