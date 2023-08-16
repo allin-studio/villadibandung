@@ -78,7 +78,7 @@ class BookingController extends Controller
         $transaksiBooking->save();
 
         // Redirect pengguna kembali ke halaman index atau halaman pemesanan sukses
-        return redirect()->route('customers.index')->with('wa_message', 'Terima kasih telah memesan villa! Klik tombol di bawah ini untuk chat via WhatsApp.');
+        return redirect()->route('customers.index')->with('wa_message', 'Terima kasih telah memesan villadibandung.com ! Klik tombol di bawah ini untuk verifikasi booking anda via WhatsApp.');
     }
     public function update(Request $request, $id)
     {

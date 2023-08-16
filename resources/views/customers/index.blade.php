@@ -273,7 +273,7 @@
 		<div class="row justify-content-center footer-cta" data-aos="fade-up">
 			<div class="col-lg-7 mx-auto text-center">
 				<h2 class="mb-4 ">Hubungi Kami Villa Bandung</h2>
-				<p><a href="https://api.whatsapp.com/send?phone=087825858343&text=Hallo%20Saya%20Baik" target="_blank" class="btn btn-primary text-white py-3 px-4" id="contact">Apply for Villa agent</a></p>
+				<p><a href="https://api.whatsapp.com/send?phone=6281323961402&text=Hallo%20Saya%20Baik" target="_blank" class="btn btn-primary text-white py-3 px-4" id="contact">Apply for Villa agent</a></p>
 			</div> <!-- /.col-lg-7 -->
 		</div> <!-- /.row -->
 	</div>
@@ -453,7 +453,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     // Redirect ke halaman chat WA
-                    window.location.href = "https://api.whatsapp.com/send?phone=0895633996833";
+                    window.location.href = "https://api.whatsapp.com/send?phone=6281323961402&text=Halo%2C%20saya%20tertarik%20untuk%20mengetahui%20lebih%20lanjut%20tentang%20villa%20Anda.%20Apakah%20saya%20dapat%20mendapatkan%20informasi%20ketersediaan%20dan%20harga%3F";
                 }
             });
         @endif

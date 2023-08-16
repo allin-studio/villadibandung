@@ -104,15 +104,21 @@
         <input type="text" name="nama_vila" placeholder="Villa Cikole" required>
         </div>
 
+
         <div class="col-md-6">
         <label for="alamat_lengkap" class="form-label">Alamat Lengkap:</label>
         <input type="text" name="alamat_lengkap" placeholder="Jl. Raya Cikole No. 123, Bandung" required>
         </div>
+        
 
         <div class="col-md-6">
-        <label for="lokasi" class="form-label">Lokasi:</label>
-        <input type="text" name="lokasi" placeholder=" Di lereng gunung, dekat hutan pinus" required>
+            <label for="lokasi" class="form-label">Lokasi:</label>
+            <select name="lokasi" id="lokasi" required>
+                <option value="Lembang">Lembang</option>
+                <option value="Dago">Dago</option>
+            </select>
         </div>
+        
 
         <div class="col-md-6">
         <label for="deskripsi" class="form-label">Deskripsi:</label>
@@ -120,24 +126,45 @@
         </div>
 
         <div class="col-md-6">
-        <label for="jumlah_kasur" class="form-tabel">Deskripsi Kasur:</label>
-        <input type="text" name="jumlah_kasur" placeholder="3 kasur single, 1 kasur double" required>
+            <label for="jumlah_kasur" class="form-label">Jumlah Kasur:</label>
+            <select name="jumlah_kasur" id="jumlah_kasur" required>
+                <option value="Bedroom 1">Bedroom 1</option>
+                <option value="Bedroom 2">Bedroom 2</option>
+                <option value="Bedroom 3">Bedroom 3</option>
+                <option value="Bedroom 4">Bedroom 4</option>
+                <option value="Bedroom 5">Bedroom 5</option>
+                <option value="Bedroom 6">Bedroom 6</option>
+            </select>
         </div>
+        
 
         <div class="col-md-6">
         <label for="jumlah_kamar_mandi" class="form-tabel">Jumlah Kamar Mandi:</label>
-        <input type="number" name="jumlah_kamar_mandi" placeholder="2" required>
+        <select name="jumlah_kamar_mandi" id="jumlah_kamar_mandi" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
         </div>
         
         <div class="col-md-6">
         <label for="kapasitas" class="form-tabel">Kapasitas</label>
-        <input type="text" name="kapasitas" id="kapasitas" placeholder="3 orang" required>
+        <input type="text" name="kapasitas" id="kapasitas" placeholder="4 orang" required>
         </div>
 
    
         <div class="col-md-6">
         <label for="fasilitas" class="form-tabel">Fasilitas</label>
-        <textarea name="fasilitas" id="fasilitas" rows="4" placeholder=" Kolam renang, dapur lengkap, taman" required></textarea>
+        <textarea name="fasilitas" id="fasilitas" rows="4"required>
+        •Barbeque Set
+        •Carport
+        •Ruang Keluarga
+        •Ruang Makan & Dapur
+        •Kolam Renang Anak
+        </textarea>
         </div>
 
         <div class="col-md-6">

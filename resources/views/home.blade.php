@@ -71,7 +71,7 @@
 @else
     <p>Silahkan login untuk melihat halaman ini.</p>
 @endif</h2>
-        <p >Vila adalah jenis properti atau bangunan hunian yang umumnya berukuran besar dan mewah. Vila biasanya berdiri sendiri di atas lahan yang luas dan dikelilingi oleh taman atau kebun yang indah. Istilah "vila" berasal dari bahasa Latin "villa," yang awalnya mengacu pada sebuah rumah pedesaan atau tempat tinggal di luar kota pada zaman Romawi kuno..</p>
+        <p>Vila adalah jenis properti atau bangunan hunian yang umumnya berukuran besar dan mewah. Vila biasanya berdiri sendiri di atas lahan yang luas dan dikelilingi oleh taman atau kebun yang indah. Istilah "vila" berasal dari bahasa Latin "villa," yang awalnya mengacu pada sebuah rumah pedesaan atau tempat tinggal di luar kota pada zaman Romawi kuno..</p>
 		<p>Vila sering dianggap sebagai tempat liburan atau tempat peristirahatan yang ideal, karena menyediakan ruang lebih banyak daripada rumah biasa dan menawarkan privasi yang lebih tinggi. Fasilitas yang umumnya ada di vila meliputi beberapa kamar tidur, kamar mandi, ruang keluarga, dapur, kolam renang pribadi, area bersantai di luar ruangan, dan bahkan fasilitas rekreasi atau olahraga tertentu.</p>
 		<p>Sifat mewah dan eksklusif dari vila sering kali membuatnya menjadi pilihan populer bagi wisatawan kelas atas, keluarga besar yang ingin berkumpul, atau untuk acara-acara spesial seperti pernikahan atau acara bisnis. Vila juga dapat dijadikan investasi properti yang menguntungkan dengan menyewakannya kepada wisatawan atau pengunjung untuk mendapatkan pendapatan tambahan.</p>
 	
