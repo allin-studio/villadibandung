@@ -14,7 +14,7 @@
   }
 </style>
 <!-- resources/views/vilas/show.blade.php -->
-
+@extends('layouts.app')
 @section('content')
 <div class="container-fluid">
   <h1><center>{{ $vila->nama_vila }}</center></h1><table class="table">
@@ -30,13 +30,21 @@
 @endif
         <table class="table table-bordered border-black">
         <tbody>
+        <tr>
+            <th scope="row">Deskripsi</th>
+            <td>{{ $vila->deskripsi }}</td>
+          </tr>
           <tr>
             <th scope="row">Lokasi</th>
             <td>{{ $vila->lokasi }}</td>
           </tr>
           <tr>
-            <th scope="row">Harga</th>
+            <th scope="row">Harga Weekday</th>
             <td>Rp {{ number_format($vila->harga, 2, ',', '.') }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Harga Weeend</th>
+            <td>Rp {{ number_format($vila->harga_weekend, 2, ',', '.') }}</td>
           </tr>
           <tr>
             <th scope="row">Kapasitas</th>
@@ -45,6 +53,10 @@
           <tr>
             <th scope="row">Jumlah Kasur</th>
             <td>{{ $vila->jumlah_kasur }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Jumlah Kamar Mandi</th>
+            <td>{{ $vila->jumlah_kamar_mandi }}</td>
           </tr>
           <tr>
             <th scope="row">Fasilitas</th>

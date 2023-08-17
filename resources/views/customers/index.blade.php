@@ -37,8 +37,8 @@
 	.green-box {
         background-color: #055555; /* Warna hijau */
         padding: 50px;
-		width: 150%;
-		margin-left: -60%;
+		width: 115%;
+		margin-left: -15%;
 		border-radius: 30px;                        
       	box-shadow: 0 8px 10px 10px rgba(0, 0, 0, 0.1);
     }
@@ -51,8 +51,8 @@
 	.grean-box {
         background-color: #055555; /* Warna hijau */
         padding: 50px;
-		width: 150%;
-		margin-left: 10%;
+		width: 115%;
+		margin-left: 8%;
 		border-radius: 30px;                        
       	box-shadow: 0 8px 10px 10px rgba(0, 0, 0, 0.1);
     }
@@ -248,16 +248,16 @@
 		<div class="container">
 			<div class="row justify-content-center  text-center mb-5">
 				<div class="col-lg-5">
-					<h2 class="font-weight-bold heading text-primary mb-4" id="peraturan"style="text-align:left">Peraturan Villa Lembang</h2>
+					<h3 class="font-weight-bold heading text-primary mb-4" id="peraturan"style="text-align:left">Peraturan Villa Lembang</h3>
 					<div class="green-box">
 					@foreach($peraturans as $peraturan)
 					<p class="left-align">•  {{ $peraturan->isi }}</p>
-					@endforeach
+					@endforeach	
 					</div>
 				</div>
 
 				<div class="col-lg-5">
-				<h2 class="font-weight-bold heading text-primary mb-4" id="peraturan" style="text-align:right">Peraturan Villa Dago</h2>
+				<h3 class="font-weight-bold heading text-primary mb-4" id="peraturan" style="text-align:right">Peraturan Villa Dago</h3>
 					<div class="grean-box">
 					@foreach($peraturandagos as $peraturandago)
 					<p class="left-align">•  {{ $peraturandago->isi }}</p>

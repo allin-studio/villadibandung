@@ -86,20 +86,27 @@
         border-radius: 5px;
     }
 
-    .checkbox-container {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
+    .bordered-box {
+        border: 1px solid #ccc;
+    padding: 10px;
+    width:1000px; /* Mengatur lebar kotak */
+    border-radius: 7px; /* Mengatur sudut tidak siku-siku */
+    margin-bottom:10px;
+}
+.checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 5px;
+    white-space: nowrap; /* Menjaga teks dalam satu baris */
+    overflow: hidden; /* Mengatur overflow jika terlalu lebar */
+    text-overflow: ellipsis;
+    margin-left: 5px; /* Jarak 5px ke kiri */
+    margin-right: 5px;
+}
 
-    .checkbox-label {
-        display: flex;
-        align-items: center;
-    }
-
-    .checkbox-input {
-        margin-right: 5px;
-    }
+.checkbox-label input[type="checkbox"] {
+    margin-right: 5px;
+}
 </style>
 <!-- resources/views/vilas/create.blade.php -->
 <div class="container-fluid">
@@ -163,18 +170,6 @@
         <input type="text" name="kapasitas" id="kapasitas" placeholder="4 orang" required>
         </div>
 
-   
-        <div class="col-md-6">
-        <label for="fasilitas" class="form-tabel">Fasilitas</label>
-        <textarea name="fasilitas" id="fasilitas" rows="4"required>
-        • Barbeque Set
-        • Carport
-        • Ruang Keluarga
-        • Ruang Makan & Dapur
-        • Kolam Renang Anak
-        </textarea>
-        </div>
-
         <div class="col-md-6">
             <label for="harga" class="form-tabel">Harga/Hari Weekday</label>
             <input type="text" name="harga" id="harga" placeholder="1000000" required>
@@ -184,6 +179,63 @@
             <label for="harga" class="form-tabel">Harga/Hari Weekend</label>
             <input type="text" name="harga_weekend" id="harga" placeholder="1000000" required>
         </div>
+
+        <div class="col-md-6">
+            <label for="Fasilitas" class="form-tabel">Fasilitas</label>
+            <div class="col-md-6 bordered-box">
+            <div class="fasilitas-checkboxes">
+            <label class="checkbox-label">
+                    <input type="checkbox" name="fasilitas[]" value="Kolam Renang"> Kolam Renang
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="fasilitas[]" value="Kolam Renang Hangat"> Kolam Renang Hangat
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="fasilitas[]" value="Jacuzzi"> Jacuzzi
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="fasilitas[]" value="Hot Tub"> Hot Tub
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="fasilitas[]" value="Karaoke Set"> Karaoke Set
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="fasilitas[]" value="Karaoke Room"> Karaoke Room
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="fasilitas[]" value="Barbeque Set"> Barbeque Set
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="fasilitas[]" value="Wifi"> Wifi
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="fasilitas[]" value="Tv Kabel"> Tv Kabel
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="fasilitas[]" value="Alat Masak Standar Lengkap"> Alat Masak Standar Lengkap
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="fasilitas[]" value="Alat Makan Standar Lengkap"> Alat Makan Standar Lengkap
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="fasilitas[]" value="Barbeque Set" checked> Barbeque Set
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="fasilitas[]" value="Carport" checked> Carport
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="fasilitas[]" value="Ruang Keluarga" checked> Ruang Keluarga
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="fasilitas[]" value="Ruang Makan & Dapur" checked> Ruang Makan & Dapur
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="fasilitas[]" value="Kolam Renang Anak" checked> Kolam Renang Anak
+                </label>
+            </div>
+            </div>
+        </div>
+        <br>
 
         <div class="col-md-6">
          <label for="foto">Foto</label>
