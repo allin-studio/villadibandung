@@ -175,18 +175,62 @@
 			</div>
 		</div>
 	</div>
-	<div class="site-footer">
-		<div class="container-fluid">
-			<!-- 
-			<iframe
-            width="100%"
-            height="500"
-            frameborder="0"
-            style="border:0"
-			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984.9863036149047!2d107.61685331627347!3d-6.917463068308546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f57dd25bd92b%3A0x520d22f2f3d6e108!2sKota%20Bandung%2C%20Jawa%20Barat!5e0!3m2!1sen!2sid!4v1627891618821!5m2!1sen!2sid"
-            allowfullscreen
-        ></iframe>
-			-->
+
+
+		<div class="site-footer">
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="widget">
+						<h3>Contact</h3>
+						<address>Jl. Permata Permai XII No. 44, <br> Cisaranten Kulon Arcamanik Bandung</address>
+						<ul class="list-unstyled links">
+							<li><a href="tel://11234567890">+62(022)-456-7890</a></li>
+							<li><a href="tel://11234567890">+62 85462548526</a></li>
+							<li><a href="mailto:info@mydomain.com">info@viladibandung.com</a></li>
+						</ul>
+					</div> <!-- /.widget -->
+					</div> <!-- /.col-lg-4 -->
+				<div class="col-lg-4">
+					<div class="widget">
+						<h3>Produk</h3>
+						<ul class="list-unstyled float-start links">
+							<li><a href="#">Villa Dago</a></li>
+							<li><a href="#">Villa Lembang</a></li>
+							<li><a href="#">Bandung Raya</a></li>
+							<li><a href="#"> </a></li>
+						
+					
+						</ul>
+
+
+					</div> <!-- /.widget -->
+
+
+				</div> <!-- /.col-lg-4 -->
+				<div class="col-lg-4">
+					<div class="widget">
+						<h3>Follow Kami</h3>
+						<ul class="list-unstyled links">
+							<ul class="list-unstyled links">
+								<li><a href="https://www.tokopedia.com/villabandungamethys">Tokopedia</a></li>
+								<li><a href="https://shopee.co.id/jiwaramadhan">Shopee</a></li>
+								
+								<li><a href="https://www.airbnb.co.id/users/show/186407489">airbnb</a></li>
+							</ul>
+						</ul>
+						<ul class="list-unstyled social">
+							<li><a href="https://www.facebook.com/amethystdago/"><span class="icon-facebook"></span></a></li>
+							<li><a href="https://www.pinterest.com/adagoresort/"><span class="icon-pinterest"></span></a></li>
+							<li><a href=" "><span class="icon-instagram"></span></a></li>
+						</ul>
+					</div> <!-- /.widget -->
+				</div> <!-- /.col-lg-4 -->
+
+
+			<div class="row mt-5">
+				<div class="col-12 text-center">
 					<!-- 
               **==========
               NOTE: 
@@ -194,7 +238,7 @@
               **==========
             -->
 
-            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; by <a href=" ">Allin.studio</a> <!-- License information: https://untree.co/license/ -->
+            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>.  &mdash; by <a href=" ">Allin.studio</a> <!-- License information: https://untree.co/license/ -->
             </p>
 
           </div>
