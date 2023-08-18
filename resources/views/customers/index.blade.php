@@ -82,7 +82,7 @@
 		<div class="container">
 			<div class="menu-bg-wrap">
 				<div class="site-navigation">
-					<a href="customers" class="logo m-0 float-start">Villa Bandung</a>
+					<a href="customers" class="logo m-0 float-start">VilladiBandung.com</a>
 
 					<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
 						<li class="active"><a href="#home" id="home">Home</a></li>
@@ -141,10 +141,15 @@
 			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-9 text-center">
 					<h1 class="heading" data-aos="fade-up">Temukan tempat menginap di Villabandung.com</h1>
+
+					<!--
 					<form action="#" class="narrow-w form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
 						<input type="text" class="form-control px-4" placeholder="Lembang, Ciwidey, Pangalengan">
 						<button type="submit" class="btn btn-primary">Search</button>
 					</form>
+					-->
+
+
 				</div>
 			</div>
 		</div>
