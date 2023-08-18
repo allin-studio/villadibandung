@@ -40,7 +40,7 @@ class VilaController extends Controller
         ]);
 
         $vilaData = $request->except('foto');
-
+        $vilaData['fasilitas'] = implode(', ', $request->input('fasilitas'));
         // Upload foto ke direktori storage dan ambil pathnya
         $vila = vila::create($vilaData);
 
