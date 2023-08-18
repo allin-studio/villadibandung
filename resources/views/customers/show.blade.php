@@ -68,7 +68,7 @@
 		<div class="container">
 			<div class="menu-bg-wrap">
 				<div class="site-navigation">
-					<a href="customers" class="logo m-0 float-start">Villa di bandung.</a>
+					<a href="vilas" class="logo m-0 float-start">Villa di bandung.</a>
 
 					<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
 						<li class="active"><a href="{{ route('customers.index')}}">Kembali</a></li>
