@@ -140,7 +140,7 @@
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-9 text-center">
-					<h1 class="heading" data-aos="fade-up">Temukan tempat menginap di Villabandung.com</h1>
+					<h1 class="heading" data-aos="fade-up">Tempat menginap Villa di Bandung.com</h1>
 
 					<!--
 					<form action="#" class="narrow-w form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
