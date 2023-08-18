@@ -32,6 +32,6 @@ class TransaksiBooking extends Model
 
     public function vila()
     {
-        return $this->belongsTo(Vila::class, 'id_villa');
+        return $this->belongsTo(vila::class, 'id_villa');
     }
 }

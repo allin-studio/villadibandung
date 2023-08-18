@@ -1,11 +1,11 @@
 <?php
-// app/Models/Vila.php
+// app/Models/vila.php
 
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Vila extends Model
+class vila extends Model
 {
     public function bookings()
 {
