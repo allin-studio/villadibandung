@@ -220,6 +220,7 @@
             <thead>
                 <tr>
                     <th>No</th>
+                    <th>No Booking</th>
                     <th>Tanggal Booking</th>
                     <th>Nama Customer</th>
                     <th>vila</th>
@@ -236,6 +237,7 @@
             @foreach ($transaksi as $index => $booking)
                     <tr>
                         <td>{{ $index + 1 }}</td>
+                        <td>{{ $booking->no_booking }}</td>
                         <td>{{ $booking->waktu_dibuat }}</td>
                         <td>{{ $booking->nama_lengkap }}</td>
                         <td>
