@@ -10,7 +10,7 @@ class Booking extends Model
     use HasFactory;
     public function vila()
     {
-        return $this->belongsTo(Vila::class);
+        return $this->belongsTo(vila::class);
     }
     protected $table = 'transaksi_booking'; // Pastikan nama tabel sesuai
     protected $fillable = [

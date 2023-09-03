@@ -28,7 +28,7 @@
 	        </button>
         </div>
 				<div class="p-4">
-		  		<h1><a href="index.html" class="logo">VILLA BANDUNG</a></h1>
+		  		<h1><a href="customers" class="logo">VILLA BANDUNG</a></h1>
 	        <ul class="list-unstyled components mb-5">
 	          <li class="active">
 	            <a href="home"><span class="fa fa-home mr-3"></span> Home</a>
@@ -85,7 +85,7 @@
                 <input type="number" class="form-control" id="jumlah_kamar_mandi" name="jumlah_kamar_mandi" required>
             </div>
 			<div class="form-group">
-                <label for="foto">Foto Vila</label>
+                <label for="foto">Foto vila</label>
                 <input type="file" class="form-control-file" id="foto" name="foto" accept="image/*" required>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>

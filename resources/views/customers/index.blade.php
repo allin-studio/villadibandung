@@ -37,8 +37,8 @@
 	.green-box {
         background-color: #055555; /* Warna hijau */
         padding: 50px;
-		width: 150%;
-		margin-left: -60%;
+		width: 115%;
+		margin-left: -15%;
 		border-radius: 30px;                        
       	box-shadow: 0 8px 10px 10px rgba(0, 0, 0, 0.1);
     }
@@ -51,8 +51,8 @@
 	.grean-box {
         background-color: #055555; /* Warna hijau */
         padding: 50px;
-		width: 150%;
-		margin-left: 10%;
+		width: 115%;
+		margin-left: 8%;
 		border-radius: 30px;                        
       	box-shadow: 0 8px 10px 10px rgba(0, 0, 0, 0.1);
     }
@@ -175,7 +175,6 @@
 							<div class="property-content">
 								<div class="price mb-2"><span>{{ $vila->nama_vila }}</span></div>
 								<div>
-									<span class="d-block mb-2 text-black-50">{{ $vila->alamat_lengkap }}</span>
 									<span class="city d-block mb-3">{{ $vila->lokasi }}</span>
 									<!-- Tampilkan data lainnya seperti jumlah kasur, jumlah kamar mandi, dll. -->
 									<div class="specs d-flex mb-4">
@@ -249,16 +248,16 @@
 		<div class="container">
 			<div class="row justify-content-center  text-center mb-5">
 				<div class="col-lg-5">
-					<h2 class="font-weight-bold heading text-primary mb-4" id="peraturan"style="text-align:left">Peraturan Villa Lembang</h2>
+					<h3 class="font-weight-bold heading text-primary mb-4" id="peraturan"style="text-align:left">Peraturan Villa Lembang</h3>
 					<div class="green-box">
 					@foreach($peraturans as $peraturan)
 					<p class="left-align">•  {{ $peraturan->isi }}</p>
-					@endforeach
+					@endforeach	
 					</div>
 				</div>
 
 				<div class="col-lg-5">
-				<h2 class="font-weight-bold heading text-primary mb-4" id="peraturan" style="text-align:right">Peraturan Villa Dago</h2>
+				<h3 class="font-weight-bold heading text-primary mb-4" id="peraturan" style="text-align:right">Peraturan Villa Dago</h3>
 					<div class="grean-box">
 					@foreach($peraturandagos as $peraturandago)
 					<p class="left-align">•  {{ $peraturandago->isi }}</p>
@@ -273,7 +272,7 @@
 		<div class="row justify-content-center footer-cta" data-aos="fade-up">
 			<div class="col-lg-7 mx-auto text-center">
 				<h2 class="mb-4 ">Hubungi Kami Villa Bandung</h2>
-				<p><a href="https://api.whatsapp.com/send?phone=087825858343&text=Hallo%20Saya%20Baik" target="_blank" class="btn btn-primary text-white py-3 px-4" id="contact">Apply for Villa agent</a></p>
+				<p><a href="https://api.whatsapp.com/send?phone=6281323961402&text=Hallo%20Saya%20Baik" target="_blank" class="btn btn-primary text-white py-3 px-4" id="contact">Apply for Villa agent</a></p>
 			</div> <!-- /.col-lg-7 -->
 		</div> <!-- /.row -->
 	</div>
@@ -361,7 +360,7 @@
 				<div class="col-lg-4">
 					<div class="widget">
 						<h3>Contact</h3>
-						<address>Jl. Ir Djuanda, Kota Bandung </address>
+						<address>Jl. Permata Permai XII No. 44, Cisaranten Kulon Arcamanik Bandung</address>
 						<ul class="list-unstyled links">
 							<li><a href="tel://11234567890">+62(022)-456-7890</a></li>
 							<li><a href="tel://11234567890">+62 85462548526</a></li>
@@ -371,45 +370,22 @@
 				</div> <!-- /.col-lg-4 -->
 				<div class="col-lg-4">
 					<div class="widget">
-						<h3>Sources</h3>
-						<ul class="list-unstyled float-start links">
-							<li><a href="#">About us</a></li>
-							<li><a href="#">Services</a></li>
-							<li><a href="#">Vision</a></li>
-							<li><a href="#">Mission</a></li>
-							<li><a href="#">Terms</a></li>
-							<li><a href="#">Privacy</a></li>
-						</ul>
-						<ul class="list-unstyled float-start links">
-							<li><a href="#">Partners</a></li>
-							<li><a href="#">Business</a></li>
-							<li><a href="#">Careers</a></li>
-							<li><a href="#">Blog</a></li>
-							<li><a href="#">FAQ</a></li>
-							<li><a href="#">Creative</a></li>
-						</ul>
-					</div> <!-- /.widget -->
-				</div> <!-- /.col-lg-4 -->
-				<div class="col-lg-4">
-					<div class="widget">
 						<h3>Links</h3>
 						<ul class="list-unstyled links">
-							<li><a href="#">Our Vision</a></li>
-							<li><a href="#">About us</a></li>
-							<li><a href="#">Contact us</a></li>
+							<ul class="list-unstyled links">
+								<li><a href="https://www.tokopedia.com/villabandungamethys">Tokopedia</a></li>
+								<li><a href="https://shopee.co.id/jiwaramadhan">Shopee</a></li>
+								<li><a href="https://www.facebook.com/amethystdago/">Facebook</a></li>
+								<li><a href="https://www.airbnb.co.id/users/show/186407489">airbnb</a></li>
+							</ul>
 						</ul>
-
 						<ul class="list-unstyled social">
-							<li><a href="#"><span class="icon-instagram"></span></a></li>
-							<li><a href="#"><span class="icon-twitter"></span></a></li>
-							<li><a href="#"><span class="icon-facebook"></span></a></li>
-							<li><a href="#"><span class="icon-linkedin"></span></a></li>
-							<li><a href="#"><span class="icon-pinterest"></span></a></li>
-							<li><a href="#"><span class="icon-dribbble"></span></a></li>
+							<li><a href="https://www.facebook.com/amethystdago/"><span class="icon-facebook"></span></a></li>
+							<li><a href="https://www.pinterest.com/adagoresort/"><span class="icon-pinterest"></span></a></li>
 						</ul>
 					</div> <!-- /.widget -->
 				</div> <!-- /.col-lg-4 -->
-			</div> <!-- /.row -->
+
 
 			<div class="row mt-5">
 				<div class="col-12 text-center">
@@ -460,7 +436,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     // Redirect ke halaman chat WA
-                    window.location.href = "https://api.whatsapp.com/send?phone=0895633996833";
+                    window.location.href = "https://api.whatsapp.com/send?phone=6281323961402&text=Terima%20Kasih%20telah%20memesan%20Villadibandung!%20No%20Booking%20{{session('no_booking') }}";
                 }
             });
         @endif

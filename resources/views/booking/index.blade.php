@@ -131,7 +131,7 @@
                 </button>
             </div>
             <div class="p-4">
-                    <h1><a href="index.html" class="logo">VILLA BANDUNG</a></h1>
+                    <h1><a href="customers" class="logo">VILLA BANDUNG</a></h1>
                 <ul class="list-unstyled components mb-5">
                 <li class="active">
                     <a href="home"><span class="fa fa-home mr-3"></span> Home</a>
@@ -194,7 +194,7 @@
         tr = table.getElementsByTagName('tr');
 
         for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName('td')[2]; // Ubah angka 1 sesuai dengan indeks kolom Vila pada tabel
+            td = tr[i].getElementsByTagName('td')[2]; // Ubah angka 1 sesuai dengan indeks kolom vila pada tabel
             if (td) {
                 txtValue = td.textContent || td.innerText;
                 if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -220,9 +220,10 @@
             <thead>
                 <tr>
                     <th>No</th>
+                    <th>No Booking</th>
                     <th>Tanggal Booking</th>
                     <th>Nama Customer</th>
-                    <th>Vila</th>
+                    <th>vila</th>
                     <th>No Telepon</th>
                     <th>Jumlah Tamu</th>
                     <th>Check In</th>
@@ -236,6 +237,7 @@
             @foreach ($transaksi as $index => $booking)
                     <tr>
                         <td>{{ $index + 1 }}</td>
+                        <td>{{ $booking->no_booking }}</td>
                         <td>{{ $booking->waktu_dibuat }}</td>
                         <td>{{ $booking->nama_lengkap }}</td>
                         <td>

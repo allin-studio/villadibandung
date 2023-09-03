@@ -1,4 +1,4 @@
-<h1>Daftar aSemua Vila</h1>
+<h1>Daftar aSemua vila</h1>
     <div class="villa-list">
         @foreach ($vilaList as $vila)
             <div class="villa-card">

@@ -14,7 +14,7 @@
   }
 </style>
 <!-- resources/views/vilas/show.blade.php -->
-
+@extends('layouts.app')
 @section('content')
 <div class="container-fluid">
   <h1><center>{{ $vila->nama_vila }}</center></h1><table class="table">
@@ -30,17 +30,21 @@
 @endif
         <table class="table table-bordered border-black">
         <tbody>
+        <tr>
+            <th scope="row">Deskripsi</th>
+            <td>{{ $vila->deskripsi }}</td>
+          </tr>
           <tr>
             <th scope="row">Lokasi</th>
             <td>{{ $vila->lokasi }}</td>
           </tr>
           <tr>
-            <th scope="row">Alamat Lengkap</th>
-            <td>{{ $vila->alamat_lengkap }}</td>
+            <th scope="row">Harga Weekday</th>
+            <td>Rp {{ number_format($vila->harga, 2, ',', '.') }}</td>
           </tr>
           <tr>
-            <th scope="row">Harga</th>
-            <td>Rp {{ number_format($vila->harga, 2, ',', '.') }}</td>
+            <th scope="row">Harga Weeend</th>
+            <td>Rp {{ number_format($vila->harga_weekend, 2, ',', '.') }}</td>
           </tr>
           <tr>
             <th scope="row">Kapasitas</th>
@@ -51,13 +55,17 @@
             <td>{{ $vila->jumlah_kasur }}</td>
           </tr>
           <tr>
+            <th scope="row">Jumlah Kamar Mandi</th>
+            <td>{{ $vila->jumlah_kamar_mandi }}</td>
+          </tr>
+          <tr>
             <th scope="row">Fasilitas</th>
             <td>{{ $vila->fasilitas }}</td>
           </tr>
         </tbody>
         </table>
     <div class="col-md-3">
-    <a href="{{ route('vila.index') }}" class="btn btn-primary">Kembali ke Daftar Vila</a>
+    <a href="{{ route('vila.index') }}" class="btn btn-primary">Kembali ke Daftar vila</a>
     </div>
 @endsection
 
