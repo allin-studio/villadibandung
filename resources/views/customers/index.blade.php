@@ -82,7 +82,7 @@
 		<div class="container">
 			<div class="menu-bg-wrap">
 				<div class="site-navigation">
-					<a href="customers" class="logo m-0 float-start">VilladiBandung.com</a>
+					<a href="index" class="logo m-0 float-start">Villa Bandung.</a>
 
 					<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
 						<li class="active"><a href="#home" id="home">Home</a></li>
@@ -140,16 +140,11 @@
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-9 text-center">
-					<h1 class="heading" data-aos="fade-up">Tempat Menginap Villa di Bandung</h1>
-
-					<!--
+					<h1 class="heading" data-aos="fade-up">Temukan tempat menginap di Villabandung.com</h1>
 					<form action="#" class="narrow-w form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
 						<input type="text" class="form-control px-4" placeholder="Lembang, Ciwidey, Pangalengan">
 						<button type="submit" class="btn btn-primary">Search</button>
 					</form>
-					-->
-
-
 				</div>
 			</div>
 		</div>
@@ -180,7 +175,6 @@
 							<div class="property-content">
 								<div class="price mb-2"><span>{{ $vila->nama_vila }}</span></div>
 								<div>
-									<span class="d-block mb-2 text-black-50">{{ $vila->alamat_lengkap }}</span>
 									<span class="city d-block mb-3">{{ $vila->lokasi }}</span>
 									<!-- Tampilkan data lainnya seperti jumlah kasur, jumlah kamar mandi, dll. -->
 									<div class="specs d-flex mb-4">
@@ -278,7 +272,7 @@
 		<div class="row justify-content-center footer-cta" data-aos="fade-up">
 			<div class="col-lg-7 mx-auto text-center">
 				<h2 class="mb-4 ">Hubungi Kami Villa Bandung</h2>
-				<p><a href="https://api.whatsapp.com/send?phone=+6281289578657&text=Hallo%20admin,%20saya%20telah%20booking%20melalui%20villadibandung.com,%20dengan%20nama" target="_blank" class="btn btn-primary text-white py-3 px-4" id="contact">Apply for Villa agent</a></p>
+				<p><a href="https://api.whatsapp.com/send?phone=6281323961402&text=Hallo%20Saya%20Baik" target="_blank" class="btn btn-primary text-white py-3 px-4" id="contact">Apply for Villa agent</a></p>
 			</div> <!-- /.col-lg-7 -->
 		</div> <!-- /.row -->
 	</div>
@@ -366,46 +360,28 @@
 				<div class="col-lg-4">
 					<div class="widget">
 						<h3>Contact</h3>
-						<address>Jl. Permata Permai XII No. 44, <br> Cisaranten Kulon Arcamanik Bandung</address>
+						<address>Jl. Permata Permai XII No. 44, Cisaranten Kulon Arcamanik Bandung</address>
 						<ul class="list-unstyled links">
 							<li><a href="tel://11234567890">+62(022)-456-7890</a></li>
 							<li><a href="tel://11234567890">+62 85462548526</a></li>
 							<li><a href="mailto:info@mydomain.com">info@viladibandung.com</a></li>
 						</ul>
 					</div> <!-- /.widget -->
-					</div> <!-- /.col-lg-4 -->
-				<div class="col-lg-4">
-					<div class="widget">
-						<h3>Produk</h3>
-						<ul class="list-unstyled float-start links">
-							<li><a href="#">Villa Dago</a></li>
-							<li><a href="#">Villa Lembang</a></li>
-							<li><a href="#">Bandung Raya</a></li>
-							<li><a href="#"> </a></li>
-						
-					
-						</ul>
-
-
-					</div> <!-- /.widget -->
-
-
 				</div> <!-- /.col-lg-4 -->
 				<div class="col-lg-4">
 					<div class="widget">
-						<h3>Follow Kami</h3>
+						<h3>Links</h3>
 						<ul class="list-unstyled links">
 							<ul class="list-unstyled links">
 								<li><a href="https://www.tokopedia.com/villabandungamethys">Tokopedia</a></li>
 								<li><a href="https://shopee.co.id/jiwaramadhan">Shopee</a></li>
-								
+								<li><a href="https://www.facebook.com/amethystdago/">Facebook</a></li>
 								<li><a href="https://www.airbnb.co.id/users/show/186407489">airbnb</a></li>
 							</ul>
 						</ul>
 						<ul class="list-unstyled social">
 							<li><a href="https://www.facebook.com/amethystdago/"><span class="icon-facebook"></span></a></li>
 							<li><a href="https://www.pinterest.com/adagoresort/"><span class="icon-pinterest"></span></a></li>
-							<li><a href=" "><span class="icon-instagram"></span></a></li>
 						</ul>
 					</div> <!-- /.widget -->
 				</div> <!-- /.col-lg-4 -->
@@ -420,7 +396,7 @@
               **==========
             -->
 
-            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>.  &mdash; by <a href=" ">Allin.studio</a> <!-- License information: https://untree.co/license/ -->
+            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; by <a href=" ">Allin.studio</a> <!-- License information: https://untree.co/license/ -->
             </p>
 
           </div>
@@ -460,7 +436,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     // Redirect ke halaman chat WA
-                    window.location.href = "https://api.whatsapp.com/send?phone=0895633996833";
+                    window.location.href = "https://api.whatsapp.com/send?phone=6281323961402&text=Terima%20Kasih%20telah%20memesan%20Villadibandung!%20No%20Booking%20{{session('no_booking') }}";
                 }
             });
         @endif
