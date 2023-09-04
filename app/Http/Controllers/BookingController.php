@@ -49,7 +49,7 @@ class BookingController extends Controller
         ]);
 
         // Hitung total bayar
-        $villa = vila::findOrFail($request->villa_id);
+    $villa = vila::findOrFail($request->villa_id);
     $checkInDate = Carbon::createFromFormat('Y-m-d', $request->check_in);
     $checkOutDate = Carbon::createFromFormat('Y-m-d', $request->check_out);
     $diffDays = $checkOutDate->diffInDays($checkInDate); // Tambahkan 1 hari karena termasuk hari check-out
@@ -73,12 +73,19 @@ class BookingController extends Controller
             'jumlah_dewasa' => $request->jumlah_dewasa,
             'jumlah_anak' => $request->jumlah_anak,
             'jumlah_balita' => $request->jumlah_balita,
+            'no_booking' => $this->autonumber(),
             // Tambahkan kolom lainnya sesuai kebutuhan
         ]);
         $transaksiBooking->save();
 
+        // Set session flash 'no_booking' dengan nomor booking yang baru
+        session(['no_booking' => $transaksiBooking->no_booking]);
+
+        // Simpan session
+        session()->save();
+
         // Redirect pengguna kembali ke halaman index atau halaman pemesanan sukses
-        return redirect()->route('customers.index')->with('wa_message', 'Terima kasih telah memesan villa! Klik tombol di bawah ini untuk chat via WhatsApp.');
+        return redirect()->route('customers.index')->with('wa_message', 'Terima kasih telah memesan villadibandung.com ! Klik tombol di bawah ini untuk verifikasi booking anda via WhatsApp.');
     }
     public function update(Request $request, $id)
     {
@@ -126,4 +133,25 @@ class BookingController extends Controller
         // Redirect ke halaman index setelah berhasil dihapus
         return redirect()->route('booking.index')->with('success', 'Data booking berhasil dihapus.');
     }
+    public function autonumber() {
+        // Mengambil Booking terbaru berdasarkan waktu dibuat
+        $last = Booking::orderBy("waktu_dibuat", "DESC")->first();
+        $number = 1;
+    
+        if ($last != null) {
+            // Mengambil nomor antrian dari kode Booking terbaru
+            $lastNumber = intval(substr($last->no_booking, -3)) + 1;
+            // Menambahkan 1 ke nomor antrian terakhir
+            $number = $lastNumber;
+        }
+    
+        $number = str_pad($number, 3, "0", STR_PAD_LEFT);
+    
+        // $current_date = date("d");
+        $current_month = date("m");
+        $current_year = date("Y");
+    
+        return $current_year . $current_month . $number;
+    }
+    
 }

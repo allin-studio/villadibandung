@@ -126,6 +126,7 @@ use App\Http\Controllers\PeraturanController;
 Route::get('/peraturan', [PeraturanController::class, 'index'])->name('peraturan.index');
 Route::get('/peraturan/create', [PeraturanController::class, 'create'])->name('peraturan.create');
 Route::post('/peraturan', [PeraturanController::class, 'store'])->name('peraturan.store');
+Route::get('/new-peraturan', [PeraturanController::class, 'indexx'])->name('peraturanvilla.index');
 Route::get('/peraturan/{id}/edit', [PeraturanController::class, 'edit'])->name('peraturan.edit');
 Route::delete('/peraturan/{id}', [PeraturanController::class, 'destroy'])->name('peraturan.destroy');
 Route::put('/peraturan/{id}', [PeraturanController::class, 'update'])->name('peraturan.update');
@@ -138,4 +139,5 @@ Route::post('/peraturan', [PeraturanController::class, 'store'])->name('peratura
 Route::get('/peraturan/{id}/edit', [PeraturanController::class, 'edit'])->name('peraturan.edit');
 Route::delete('/peraturan/{id}', [PeraturanController::class, 'destroy'])->name('peraturan.destroy');
 Route::put('/peraturan/{id}', [PeraturanController::class, 'update'])->name('peraturan.update');
+
 

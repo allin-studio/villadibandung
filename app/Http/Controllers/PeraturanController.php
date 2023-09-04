@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Peraturan;
 use Illuminate\Http\Request;
+use App\Models\PeraturanDago;
 
 class PeraturanController extends Controller
 {
@@ -16,6 +17,12 @@ public function create()
 {
     return view('peraturan.create');
 }
+public function indexx()
+{
+    $peraturans = Peraturan::all();
+    $peraturandagos = PeraturanDago::all();
+    return view('customers.peraturanvilla', compact('peraturans','peraturandagos'));
+   }
 
 public function store(Request $request)
 {

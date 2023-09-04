@@ -58,6 +58,7 @@ public function filterr(Request $request)
         return view('customers.index', compact('vilas', 'reviews','peraturans','peraturandagos'));  
         return view('customers.all', compact('vilas')) ;     
     }
+
     public function show($id)
     {
         $vila = vila::findOrFail($id);

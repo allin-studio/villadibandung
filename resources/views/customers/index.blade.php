@@ -115,7 +115,7 @@
 								</li>
 							</ul>
 						</li>
-						<li><a href="#peraturan">Peraturan Villa</a></li>
+						<li><a href="{{ url('/new-peraturan') }}">Peraturan Villa</a></li>
 						<li><a href="#contact">Contact Us</a></li>
 					</ul>
 
@@ -244,26 +244,6 @@
 			
 		</div>
 	</div>
-	<div class="section section-4 bg-light">
-		<div class="container">
-			<div class="row justify-content-center  text-center mb-5">
-				<div class="col-lg-5">
-					<h3 class="font-weight-bold heading text-primary mb-4" id="peraturan"style="text-align:left">Peraturan Villa Lembang</h3>
-					<div class="green-box">
-					@foreach($peraturans as $peraturan)
-					<p class="left-align">•  {{ $peraturan->isi }}</p>
-					@endforeach	
-					</div>
-				</div>
-
-				<div class="col-lg-5">
-				<h3 class="font-weight-bold heading text-primary mb-4" id="peraturan" style="text-align:right">Peraturan Villa Dago</h3>
-					<div class="grean-box">
-					@foreach($peraturandagos as $peraturandago)
-					<p class="left-align">•  {{ $peraturandago->isi }}</p>
-					@endforeach
-					</div>
-				</div>
 				
 			</div>
 		</div>
@@ -424,23 +404,26 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-    $(document).ready(function() {
-        // Cek apakah session flash "wa_message" ada
-        @if(session('wa_message'))
-            Swal.fire({
-                title: 'Pesanan Berhasil',
-                text: '{{ session('wa_message') }}',
-                icon: 'success',
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Redirect ke halaman chat WA
-                    window.location.href = "https://api.whatsapp.com/send?phone=6281323961402&text=Terima%20Kasih%20telah%20memesan%20Villadibandung!%20No%20Booking%20{{session('no_booking') }}";
-                }
-            });
-        @endif
-    });
+$(document).ready(function() {
+    // Cek apakah session flash "wa_message" ada
+    @if(session('wa_message'))
+        var no_booking = '{{ session('no_booking') }}';
+        var whatsappText = 'Terima Kasih telah memesan Villa di Bandung! No Booking ' + no_booking;
+        
+        Swal.fire({
+            title: 'Pesanan Berhasil',
+            text: '{{ session('wa_message') }}',
+            icon: 'success',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Redirect pengguna ke situs web WhatsApp dengan nomor dan pesan yang sesuai
+                window.location.href = "https://api.whatsapp.com/send?phone=6281323961402&text=" + encodeURIComponent(whatsappText);
+            }
+        });
+    @endif
+});
 </script>
   </body>
   </html>

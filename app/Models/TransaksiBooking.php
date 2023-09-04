@@ -19,6 +19,8 @@ class TransaksiBooking extends Model
         'jumlah_dewasa',
         'jumlah_anak',
         'jumlah_balita',
+        'no_booking'
+
         // Definisi atribut lainnya sesuai kebutuhan
     ];
 
