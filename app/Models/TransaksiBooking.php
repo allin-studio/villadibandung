@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TransaksiBooking extends Model
+class TransaksiBooking extends Model 
 {
     protected $fillable = [
         'id_villa',
