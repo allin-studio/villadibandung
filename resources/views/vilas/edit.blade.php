@@ -117,7 +117,7 @@
             </div>
     
             <div class="col-md-6">
-                <label for="jumlah_kasur" class="form-label">Jumlah Kasur</label>
+                <label for="jumlah_kasur" class="form-label">Jumlah Kamar</label>
                 <input type="text" name="jumlah_kasur" id="jumlah_kasur" value="{{ $vila->jumlah_kasur }}" required>
             </div>
     

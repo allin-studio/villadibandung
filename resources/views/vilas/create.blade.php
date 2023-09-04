@@ -141,7 +141,7 @@
         </div>
 
         <div class="col-md-6">
-            <label for="jumlah_kasur" class="form-label">Jumlah Kasur:</label>
+            <label for="jumlah_kasur" class="form-label">Jumlah Kamar:</label>
             <select name="jumlah_kasur" id="jumlah_kasur" required>
                 <option value="Bedroom 1">Bedroom 1</option>
                 <option value="Bedroom 2">Bedroom 2</option>
