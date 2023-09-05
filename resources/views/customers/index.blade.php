@@ -339,7 +339,7 @@
 			<div class="row">
 				<div class="col-lg-4">
 					<div class="widget">
-						<h3>Contact</h3>
+						<h3>Contact </h3>
 						<address>Jl. Permata Permai XII No. 44, Cisaranten Kulon Arcamanik Bandung.</address>
 						<ul class="list-unstyled links">
 							
