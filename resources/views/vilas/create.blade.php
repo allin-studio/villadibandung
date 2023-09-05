@@ -1,21 +1,21 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tambah Pegawai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
+   body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding-top: 20px; /* Tambahkan padding atas untuk menyempurnakan tampilan */
+        }
 
-    .edit-container {
-        max-width: 600px;
-        padding: 20px;
-        background-color: #f5f5f5;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-    }
+    .container-lg {
+            padding: 20px; /* Tambahkan padding untuk membuat tampilan lebih responsif */
+            max-width: 100%; /* Gunakan full-width pada layar kecil */
+        }
 
     h1 {
         text-align: center;
@@ -31,7 +31,7 @@
     textarea,
     select {
         width: 100%;
-        padding: 5px;
+        padding: 10px;
         border: 1px solid #ddd;
         border-radius: 5px;
         margin-bottom: 15px;
@@ -96,20 +96,22 @@
 .checkbox-label {
     display: inline-flex;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     white-space: nowrap; /* Menjaga teks dalam satu baris */
     overflow: hidden; /* Mengatur overflow jika terlalu lebar */
     text-overflow: ellipsis;
-    margin-left: 5px; /* Jarak 5px ke kiri */
-    margin-right: 5px;
+    margin-left: 0px; /* Jarak 5px ke kiri */
+    margin-right: 0px;
 }
 
 .checkbox-label input[type="checkbox"] {
-    margin-right: 5px;
+    margin-right: 2px;
 }
 </style>
+</head>
+<body>
 <!-- resources/views/vilas/create.blade.php -->
-<div class="container-fluid">
+<div class="container-lg">
 @extends('layouts.app')
 
 @section('content')
@@ -249,6 +251,9 @@
 </div>
 </div>
 @endsection
+</div>
+</body>
+</html>
 
 
 

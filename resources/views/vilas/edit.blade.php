@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tambah Pegawai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -84,6 +91,8 @@
         border-radius: 10px;
     }
 </style>
+</head>
+<body>
 <!-- resources/views/vilas/edit.blade.php -->
     @extends('layouts.app')
     @section('content')
@@ -100,36 +109,48 @@
                 <label for="nama_vila" class="form-label">Nama Villa</label>
                 <input type="text" name="nama_vila" id="nama_vila" value="{{ $vila->nama_vila }}" required>
             </div>
-    
+
             <div class="col-md-6">
-                <label for="alamat_lengkap" class="form-label">Alamat Lengkap</label>
-                <input type="text" name="alamat_lengkap" id="alamat_lengkap" value="{{ $vila->alamat_lengkap }}" required>
-            </div>
-    
-            <div class="col-md-6">
-                <label for="lokasi" class="form-label">Lokasi</label>
-                <input type="text" name="lokasi" id="lokasi" value="{{ $vila->lokasi }}" required>
+                <label for="lokasi" class="form-label">Lokasi:</label>
+                <select name="lokasi" id="lokasi" value="{{ $vila->lokasi }}" required>
+                    <option value="Lembang">Lembang</option>
+                    <option value="Dago">Dago</option>
+                </select>
             </div>
     
             <div class="col-md-6">
                 <label for="deskripsi" class="form-label">Deskripsi</label>
                 <textarea name="deskripsi" id="deskripsi" required>{{ $vila->deskripsi }}</textarea>
             </div>
-    
+
             <div class="col-md-6">
-                <label for="jumlah_kasur" class="form-label">Jumlah Kamar</label>
-                <input type="text" name="jumlah_kasur" id="jumlah_kasur" value="{{ $vila->jumlah_kasur }}" required>
+                <label for="jumlah_kasur" class="form-label">Jumlah Kamar:</label>
+                <select name="jumlah_kasur" id="jumlah_kasur" value="{{ $vila->jumlah_kasur }}" required>
+                    <option value="Bedroom 1">Bedroom 1</option>
+                    <option value="Bedroom 2">Bedroom 2</option>
+                    <option value="Bedroom 3">Bedroom 3</option>
+                    <option value="Bedroom 4">Bedroom 4</option>
+                    <option value="Bedroom 5">Bedroom 5</option>
+                    <option value="Bedroom 6">Bedroom 6</option>
+                </select>
             </div>
     
             <div class="col-md-3">
                 <label for="kapasitas" class="form-label">Kapasitas</label>
                 <input type="text" name="kapasitas" id="kapasitas" value="{{ $vila->kapasitas }}" required>
             </div>
-    
-            <div class="col-md-3">
-            <label for="jumlah_kamar_mandi">Jumlah Kamar Mandi</label>
-            <input type="number" name="jumlah_kamar_mandi" id="jumlah_kamar_mandi" value="{{ $vila->jumlah_kamar_mandi }}" required>
-            </div>
+
+            <div class="col-md-6">
+                <label for="jumlah_kamar_mandi" class="form-tabel">Jumlah Kamar Mandi:</label>
+                <select name="jumlah_kamar_mandi" id="jumlah_kamar_mandi" value="{{ $vila->jumlah_kamar_mandi }}" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+                </div>
     
             <div class="col-md-6">
                 <label for="fasilitas" class="form-label">Fasilitas</label>
@@ -176,4 +197,5 @@
         </div>
         
     @endsection
- 
+</body>
+</html>

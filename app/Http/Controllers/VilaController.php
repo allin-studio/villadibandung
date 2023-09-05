@@ -81,7 +81,6 @@ class VilaController extends Controller
 
         $request->validate([
             'nama_vila' => 'required',
-            'alamat_lengkap' => 'required',
             'lokasi' => 'required',
             'deskripsi' => 'required',
             'jumlah_kasur' => 'required',
