@@ -82,7 +82,7 @@
 		<div class="container">
 			<div class="menu-bg-wrap">
 				<div class="site-navigation">
-					<a href="https://villadibandung.com/" class="logo m-0 float-start">Villa Bandung.</a>
+					<a href="https://villadibandung.com/" class="logo m-0 float-start">Villa di Bandung</a>
 
 					<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
 						<li class="active"><a href="#home" id="home">Home</a></li>
@@ -142,7 +142,7 @@
 				<div class="col-lg-9 text-center">
 					<h1 class="heading" data-aos="fade-up">Temukan tempat menginap Villa di Bandung</h1>
 					<form action="#" class="narrow-w form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
-						<input type="text" class="form-control px-4" placeholder="villadibandung.com">
+						<input type="text" class="form-control px-4" placeholder="   villadibandung.com">
 						<button type="submit" class="btn btn-primary">Search</button>
 					</form>
 				</div>
@@ -251,8 +251,8 @@
 	<div class="section">
 		<div class="row justify-content-center footer-cta" data-aos="fade-up">
 			<div class="col-lg-7 mx-auto text-center">
-				<h2 class="mb-4 ">Hubungi Kami Villa Bandung</h2>
-				<p><a href="https://api.whatsapp.com/send?phone=6281323961402&text=Hallo%20admin,%20saya%20ingin%20bertanya%20tentang%20villa" target="_blank" class="btn btn-primary text-white py-3 px-4" id="contact">Apply for Villa agent</a></p>
+				<h2 class="mb-4 ">Hubungi Kami Villa di Bandung</h2>
+				<p><a href="https://api.whatsapp.com/send?phone=6281323961402&text=Hallo%20admin,%20saya%20ingin%20bertanya%20tentang%20villa" target="_blank" class="btn btn-primary text-white py-3 px-4" id="contact">Hubungi Admin</a></p>
 			</div> <!-- /.col-lg-7 -->
 		</div> <!-- /.row -->
 	</div>
@@ -342,9 +342,9 @@
 						<h3>Contact</h3>
 						<address>Jl. Permata Permai XII No. 44, Cisaranten Kulon Arcamanik Bandung</address>
 						<ul class="list-unstyled links">
-							<li><a href="tel://11234567890">+62(022)-456-7890</a></li>
-							<li><a href="tel://11234567890">+62 85462548526</a></li>
-							<li><a href="mailto:info@mydomain.com">info@viladibandung.com</a></li>
+							
+							<li><a href="tel://11234567890">+62 81323961402</a></li>
+							<li><a href="mailto:info@mydomain.com">info@villadibandung.com</a></li>
 						</ul>
 					</div> <!-- /.widget -->
 				</div> <!-- /.col-lg-4 -->
