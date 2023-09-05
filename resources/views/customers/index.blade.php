@@ -408,7 +408,7 @@ $(document).ready(function() {
     // Cek apakah session flash "wa_message" ada
     @if(session('wa_message'))
         var no_booking = '{{ session('no_booking') }}';
-        var whatsappText = 'Terima Kasih telah memesan Villa di Bandung! No Booking ' + no_booking;
+        var whatsappText = 'Hallo saya ingin verifikasi pesanan melalui website villadibandung.com dengan no booking ' + no_booking;
         
         Swal.fire({
             title: 'Pesanan Berhasil',
