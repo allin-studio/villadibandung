@@ -34,7 +34,7 @@ class VilaController extends Controller
             'kapasitas' => 'required',
             'fasilitas' => 'required',
             'harga' => 'required',
-            'foto.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'foto.*' => 'image|mimes:jpeg,png,jpg,gif|max:12288',
             'jumlah_kamar_mandi' => 'required', // Validasi jumlah kamar mandi
         ]);
 
@@ -87,7 +87,7 @@ class VilaController extends Controller
             'kapasitas' => 'required',
             'fasilitas' => 'required',
             'harga' => 'required',
-            'foto.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'foto.*' => 'image|mimes:jpeg,png,jpg,gif|max:12288',
             'jumlah_kamar_mandi' => 'required',
         ]);
 
