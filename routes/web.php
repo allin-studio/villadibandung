@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\VilaController;
+use App\Http\Controllers\ReservationController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,9 +52,9 @@ Route::get('index', function () {
 // routes/web.php
 // web.php
 
-use App\Http\Controllers\BookingController;
-use App\Http\Controllers\VilaController;
 // ... (kode rute lainnya)
+
+
 
 Route::get('/vila', [VilaController::class, 'index'])->name('vila.index');
 Route::get('/vila/create', [VilaController::class, 'create'])->name('vila.create');
@@ -93,11 +99,24 @@ Route::get('/all', [CustomerController::class, 'all'])->name('customers.all');
 Route::prefix('customers')->group(function () {
     Route::get('vilas/{id}', [CustomerController::class, 'show'])->name('customers.vilas.show');
 });
+
+Route::prefix('reservation')->group(function () {
+    Route::get('details/{id}', [ReservationController::class, 'details'])->name('reservation.details');
+    Route::post('submit', [ReservationController::class, 'submit'])->name('reservation.submit');
+});
+
+// Route::prefix('reservation')->group(function () {
+//     Route::get('vilas/{id}', [ReservationController::class, 'showReservationForm'])->name('reservation.reservation');
+// });
+
+Route::get('/reservation', [ReservationController::class, 'showReservationForm'])->name('reservation.form');
+
+
 Route::group(['prefix' => 'customers'], function () {
     // Rute lainnya untuk customers
 
     // Rute untuk halaman detail vila
-    Route::get('/vilas/{vila}', 'CustomerController@showVilaDetail')->name('customers.vilas.show');
+    // Route::get('/vilas/{vila}', 'CustomerController@showVilaDetail')->name('customers.vilas.show');
     Route::get('/property-single/{id}', [CustomerController::class, 'showSingleProperty'])->name('property-single');
 
     // Rute untuk menyimpan data pemesanan

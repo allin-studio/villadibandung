@@ -14,7 +14,7 @@
 
 	<meta name="description" content="" />
 	<meta name="keywords" content="bootstrap, bootstrap5" />
-	
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -39,7 +39,7 @@
         padding: 50px;
 		width: 115%;
 		margin-left: -15%;
-		border-radius: 30px;                        
+		border-radius: 30px;
       	box-shadow: 0 8px 10px 10px rgba(0, 0, 0, 0.1);
     }
 
@@ -53,7 +53,7 @@
         padding: 50px;
 		width: 115%;
 		margin-left: 8%;
-		border-radius: 30px;                        
+		border-radius: 30px;
       	box-shadow: 0 8px 10px 10px rgba(0, 0, 0, 0.1);
     }
 
@@ -61,7 +61,19 @@
         color: white;
 		font-size: 18px;
     }
-	
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        border: none;
+        cursor: pointer;
+    }
+
 	.left-align {
     text-align: left;
 	}
@@ -85,7 +97,7 @@
 					<a href="https://villadibandung.com/" class="logo m-0 float-start">Villa di Bandung </a>
 
 					<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
-						<li class="active"><a href="#home" id="home">Home</a></li>
+						<li class="has-children"><a href="#home" id="home">Home</a></li>
 						<li class="has-children">
 							<a href="#villa">Villa</a>
 							<ul class="dropdown">
@@ -93,30 +105,36 @@
 									<a href="#">Villa Lembang</a>
 									<ul class="dropdown">
 									@foreach($vilas as $vila)
-            @if ($vila->lokasi === 'Lembang') <!-- Ganti 'Lembang' dengan lokasi yang ingin Anda filter -->
-                <li>
-                    <a href="{{ route('customers.vilas.show', $vila->id) }}">{{ $vila->nama_vila }}</a>
-                </li>
-            @endif
-        @endforeach
-									</ul>
+                                    @if ($vila->lokasi === 'Lembang') <!-- Ganti 'Lembang' dengan lokasi yang ingin Anda filter -->
+                                        <li>
+                                            <a href="{{ route('customers.vilas.show', $vila->id) }}">{{ $vila->nama_vila }}</a>
+                                        </li>
+                                    @endif
+                                @endforeach
+							</ul>
 								</li>
-								<li class="has-children">
-									<a href="#">Villa Dago</a>
-									<ul class="dropdown">
-									@foreach($vilas as $vila)
-            @if ($vila->lokasi === 'Dago') <!-- Ganti 'Lembang' dengan lokasi yang ingin Anda filter -->
-                <li>
-                    <a href="{{ route('customers.vilas.show', $vila->id) }}">{{ $vila->nama_vila }}</a>
-                </li>
-            @endif
-        @endforeach
+                                    <li class="has-children">
+                                                        <a href="#">Villa Dago</a>
+                                                        <ul class="dropdown">
+                                                        @foreach($vilas as $vila)
+                                    @if ($vila->lokasi === 'Dago') <!-- Ganti 'Lembang' dengan lokasi yang ingin Anda filter -->
+                                        <li>
+                                            <a href="{{ route('customers.vilas.show', $vila->id) }}">{{ $vila->nama_vila }}</a>
+                                        </li>
+                                    @endif
+                                @endforeach
 									</ul>
 								</li>
 							</ul>
 						</li>
 						<li><a href="{{ url('/new-peraturan') }}">Peraturan Villa</a></li>
 						<li><a href="#contact">Contact Us</a></li>
+                        <li>
+                            <a href="https://reservation.smartbooking-asia.com/Booking/Index.aspx?htlcccode=HCC2400197&lang=en">
+                                Book Now
+                            </a>
+                        </li>
+
 					</ul>
 
 					<a href="#" class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
@@ -127,6 +145,7 @@
 			</div>
 		</div>
 	</nav>
+
 
 	<div class="hero">
 
@@ -217,7 +236,7 @@
 				<div class="col-md-6 text-md-end">
 					<div id="testimonial-nav">
 						<span class="prev" data-controls="prev">Prev</span>
-						
+
 						<span class="next" data-controls="next">Next</span>
 					</div>
 				</div>
@@ -225,7 +244,7 @@
 
 			<div class="row">
 				<div class="col-lg-4">
-					
+
 				</div>
 			</div>
 			<div class="testimonial-slider-wrap">
@@ -241,10 +260,10 @@
 					@endforeach
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
-				
+
 			</div>
 		</div>
 	</div>
@@ -335,14 +354,14 @@
 -->
 	<div class="site-footer">
 		<div class="container">
-			
+
 			<div class="row">
 				<div class="col-lg-4">
 					<div class="widget">
 						<h3>Contact </h3>
 						<address>Jl. Permata Permai XII No. 44, Cisaranten Kulon Arcamanik Bandung.</address>
 						<ul class="list-unstyled links">
-							
+
 							<li><a href="tel://11234567890">+62 81323961402</a></li>
 							<li><a href="mailto:info@mydomain.com">info@villadibandung.com</a></li>
 						</ul>
@@ -370,10 +389,10 @@
 
 			<div class="row mt-5">
 				<div class="col-12 text-center">
-					<!-- 
+					<!--
               **==========
-              NOTE: 
-              Please don't remove this copyright link unless you buy the license here https://untree.co/license/  
+              NOTE:
+              Please don't remove this copyright link unless you buy the license here https://untree.co/license/
               **==========
             -->
 
@@ -410,7 +429,7 @@ $(document).ready(function() {
     @if(session('wa_message'))
         var no_booking = '{{ session('no_booking') }}';
         var whatsappText = 'Hallo saya ingin verifikasi pesanan melalui website villadibandung.com dengan no booking ' + no_booking;
-        
+
         Swal.fire({
             title: 'Pesanan Berhasil',
             text: '{{ session('wa_message') }}',

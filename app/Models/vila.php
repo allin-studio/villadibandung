@@ -8,9 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class vila extends Model
 {
     public function bookings()
-{
-    return $this->hasMany(Booking::class);
-}
+    {
+        return $this->hasMany(Booking::class);
+    }
+
+
     // Nama tabel dalam basis data yang akan dihubungkan dengan model ini
     protected $table = 'vilas';
     protected $casts = [

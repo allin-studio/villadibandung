@@ -13,7 +13,7 @@ class CustomerController extends Controller
     public function all()
 {
     $vilas = vila::all(); // Villa adalah model yang merepresentasikan data villa
-    
+
     return view('customers.all', compact('vilas'));
 }
 public function showAll()
@@ -55,8 +55,8 @@ public function filterr(Request $request)
         $reviews = Review::all();
         $peraturans = Peraturan::all();
         $peraturandagos = PeraturanDago::all();
-        return view('customers.index', compact('vilas', 'reviews','peraturans','peraturandagos'));  
-        return view('customers.all', compact('vilas')) ;     
+        return view('customers.index', compact('vilas', 'reviews','peraturans','peraturandagos'));
+        return view('customers.all', compact('vilas')) ;
     }
 
     public function show($id)
@@ -65,6 +65,7 @@ public function filterr(Request $request)
         $vilas = vila::all();
         return view('customers.show', compact('vila','vilas'));
     }
+
     public function showBookingForm(vila $vila)
     {
         return view('customers.booking')->with('vila', $vila);
@@ -75,12 +76,12 @@ public function filterr(Request $request)
     }
     public function showSingleProperty($id) {
         $villa = vila::find($id);
-    
+
         if (!$villa) {
             abort(404); // atau Anda bisa menangani kasus jika properti tidak ditemukan
         }
-    
+
         return view('property-single', compact('villa'));
     }
-    
+
 }

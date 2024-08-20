@@ -14,7 +14,7 @@
 
 	<meta name="description" content="" />
 	<meta name="keywords" content="bootstrap, bootstrap5" />
-	
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -51,7 +51,7 @@
 			font-size: 40px;
 		}
     </style>
-	
+
 </head>
 <body>
 
@@ -82,7 +82,6 @@
 		</div>
 	</nav>
 
-
 	<div class="hero page-inner overlay" style="background-image: url('{{ asset('images/hero_bg_001.jpg') }}');">
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
@@ -96,12 +95,8 @@
 							<li class="breadcrumb-item active text-white-50" aria-current="page">{{ $vila->nama_vila }}</li>
 						</ol>
 					</nav>
-
-
 				</div>
 			</div>
-
-
 		</div>
 	</div>
 
@@ -129,7 +124,7 @@
 				function isWeekend(day) {
 					return day === 0 || day === 6; // Hari 0 (Minggu) dan 6 (Sabtu) adalah akhir pekan
 				}
-			</script>
+			</script
 			@php
 				$dayOfWeek = date('N'); // Mendapatkan hari dalam bentuk angka (1 = Senin, 2 = Selasa, dst.)
 			@endphp
@@ -140,15 +135,21 @@
 				@else <!-- Jika hari biasa -->
 					Rp {{ number_format($vila->harga, 2, ',', '.') }}/Hari (Weekday)
 				@endif
-			</h3>  
+			</h3>
 			        <p class="text-black-50 fs-5"><span class="icon-bed me-2"></span>{{ $vila->jumlah_kasur }}</p>
 					<p class="text-black-50 fs-5"><span class="icon-bath me-2"></span>{{ $vila->jumlah_kamar_mandi }} kamar mandi</p>
                     <p class="text-black-50 fs-5"><span class="icon-people me-2"></span>{{ $vila->kapasitas }}</p>
 					<p class="text-black-50 fs-5">{{ $vila->deskripsi }}</p>
 					<p class="text-black-50 fs-5">{{ $vila->fasilitas }}</p>
 					<div id="map">
-        
-                    <a href="{{ route('createBookingForm', ['id' => $vila->id]) }}" class="btn btn-primary">Booking</a>
+
+                    <a href="{{ route('createBookingForm', ['id' => $vila->id]) }}" class="btn btn-primary">Manual Booking</a>
+                    <a href="{{ route('reservation.details', ['id' => $vila->id]) }}" class="btn btn-primary">Online Booking</a>
+                    {{--  <a href="{{ route('reservation.form') }}" class="btn btn-primary">Online Booking</a>  --}}
+
+
+
+
 
 				<!--
 					<div class="d-block agent-box p-5">
@@ -179,7 +180,7 @@
 
 		<div class="site-footer">
 		<div class="container">
-			
+
 			<div class="row">
 				<div class="col-lg-4">
 					<div class="widget">
@@ -200,8 +201,8 @@
 							<li><a href="#">Villa Lembang</a></li>
 							<li><a href="#">Bandung Raya</a></li>
 							<li><a href="#"> </a></li>
-						
-					
+
+
 						</ul>
 
 
@@ -216,7 +217,7 @@
 							<ul class="list-unstyled links">
 								<li><a href="https://www.tokopedia.com/villabandungamethys">Tokopedia</a></li>
 								<li><a href="https://shopee.co.id/jiwaramadhan">Shopee</a></li>
-								
+
 								<li><a href="https://www.airbnb.co.id/users/show/186407489">airbnb</a></li>
 							</ul>
 						</ul>
@@ -231,10 +232,10 @@
 
 			<div class="row mt-5">
 				<div class="col-12 text-center">
-					<!-- 
+					<!--
               **==========
-              NOTE: 
-              Please don't remove this copyright link unless you buy the license here https://untree.co/license/  
+              NOTE:
+              Please don't remove this copyright link unless you buy the license here https://untree.co/license/
               **==========
             -->
 
