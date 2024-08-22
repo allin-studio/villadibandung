@@ -149,17 +149,17 @@
 
                 var urlMap = {
                     '49': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005616&amp%3blang=EN',
-                    'm-26': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005618&amp%3blang=EN',
-                    'm-18': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005619&amp%3blang=EN',
+                    '51': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005618&amp%3blang=EN',
+                    '53': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005619&amp%3blang=EN',
                     '50': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005617&amp%3blang=EN',
-                    'kb-05': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005620&amp%3blang=EN',
-                    'm-57': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005621&amp%3blang=EN',
-                    'm-92': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005701&amp%3blang=EN',
-                    'm-59': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005699&amp%3blang=EN',
-                    's-09': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005703&amp%3blang=EN',
-                    'pr-31': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005702&amp%3blang=EN',
-                    'pg-28': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005700&amp%3blang=EN',
-                    'p-12A': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005698&amp%3blang=EN'
+                    '52': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005620&amp%3blang=EN',
+                    '54': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005621&amp%3blang=EN',
+                    '58': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005701&amp%3blang=EN',
+                    '56': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005699&amp%3blang=EN',
+                    '60': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005703&amp%3blang=EN',
+                    '59': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005702&amp%3blang=EN',
+                    '57': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005700&amp%3blang=EN',
+                    '55': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005698&amp%3blang=EN'
                 };
 
                 var bookingUrl = urlMap[villaId] || '#';

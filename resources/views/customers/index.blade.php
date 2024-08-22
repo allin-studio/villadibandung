@@ -7,10 +7,35 @@
 <!doctype html>
 <html lang="en">
 <head>
+
+    <title>Amethyst Villas Management</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link type="text/css" href="css/style.css" rel="Stylesheet" />
+        <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery-ui.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/reservation.js') }}"></script>
+        <script type="text/javascript">
+            var _strHtlCCCode = "HCC2400197";
+            var _strPath = "https://reservation.smartbooking-asia.com/";
+            var _strBackurl = "https://reservation.smartbooking-asia.com/booking/index.aspx?htlcccode=" + _strHtlCCCode;
+            var _intDefaultLOS = 2;
+            var _intDefaultCi = 0;
+            var _intDefaultRoom = 1;
+            var _intDefaultAdult = 1;
+            var _intDefaultChild = 0;
+        </script>
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Untree.co">
 	<link rel="shortcut icon" href="favicon.png">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
 	<meta name="description" content="" />
 	<meta name="keywords" content="bootstrap, bootstrap5" />
@@ -77,6 +102,155 @@
 	.left-align {
     text-align: left;
 	}
+
+    .pelican-reservation {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 50px;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        display: flex; /* Menambahkan display flex */
+        flex-direction: column; /* Menambahkan flex-direction column */
+        align-items: center; /* Menambahkan align-items center */
+    }
+
+    .pelican-reservation .rsvlabel {
+        font-weight: 600;
+        margin-bottom: 8px;
+        display: block;
+        color: #333;
+    }
+
+    .pelican-reservation .pelican-multiproperty {
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Untuk memberi jarak antar elemen form */
+        align-items: flex-end; /* Menyelaraskan semua elemen ke kanan */
+        width: 100%; /* Menambahkan lebar 100% */
+    }
+
+    .pelican-reservation .destinations {
+        width: 100%;
+    }
+
+    .pelican-reservation select,
+    .pelican-reservation input[type="text"] {
+        width: 100%;
+        padding: 12px;
+        margin-top: 5px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-sizing: border-box;
+        font-size: 16px;
+        transition: border-color 0.3s ease, box-shadow 0.9s ease;
+    }
+
+    .pelican-reservation select:focus,
+    .pelican-reservation input[type="text"]:focus {
+        border-color: #055555;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    .pelican-reservation .mpinput {
+        display: flex;
+        gap: 20px; /* Jarak antar field */
+        align-items: center;
+        flex-wrap: wrap; /* Agar field bisa membungkus pada layar kecil */
+    }
+
+    .pelican-reservation .rsvfield {
+        flex: 1 1 calc(10% - 10px); /* Lebar setiap field */
+        min-width: 150px; /* Lebar minimum untuk field */
+        margin-bottom: 0;
+        box-sizing: border-box; /* Agar margin dan padding diperhitungkan dalam lebar */
+    }
+
+    .pelican-reservation .btnaction {
+        display: flex;
+        gap: 5px;
+        justify-content: center; /* Menyelaraskan tombol ke tengah */
+        margin-top: 30px;
+        width: 100%; /* Menambahkan lebar 100% */
+    }
+
+    .pelican-reservation .btnaction input[type="button"] {
+        padding: 12px 25px;
+        border: none;
+        background-color: #055555;
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 6px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .pelican-reservation .btnaction input[type="button"]:hover {
+        background-color: #055555;
+        transform: translateY(-2px);
+    }
+
+    .pelican-reservation .btnaction input[type="button"]:active {
+        background-color: #055555;
+        transform: translateY(0);
+    }
+
+    #villa {
+        color: #055555;
+    }
+
+    .text-primary {
+        color: #055555;
+    }
+
+    /* Responsif untuk layar yang lebih kecil */
+    @media (max-width: 992px) {
+        .pelican-reservation {
+            padding: 30px;
+        }
+
+        .pelican-reservation .mpinput {
+            flex-direction: column;
+            align-items: center; /* Menyelaraskan elemen ke tengah */
+        }
+
+        .pelican-reservation .rsvfield {
+            flex: 1 1 100%; /* Menyesuaikan lebar field */
+            min-width: 0;
+        }
+
+        .pelican-reservation .btnaction {
+            justify-content: center;
+        }
+
+        .pelican-reservation .btnaction input[type="button"] {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .pelican-reservation {
+            padding: 20px;
+        }
+
+        .pelican-reservation .rsvlabel {
+            font-size: 14px;
+        }
+
+        .pelican-reservation select,
+        .pelican-reservation input[type="text"] {
+            font-size: 14px;
+            padding: 10px;
+        }
+
+        .pelican-reservation .btnaction input[type="button"] {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    }
+
 	</style>
 </head>
 <body>
@@ -168,13 +342,88 @@
 			</div>
 		</div>
 	</div>
+<br>
+<br>
+<div class="pelican-reservation">
+    <form method="post" id="form1" action="">
+        <input type="hidden" id="hdnCO0001" value="CI00002|~|Bandung"/>
+        <input type="hidden" id="hdnHotelData" value="CO0001_CI00002*|HT24005616|~|Amethyst M08 Dago|#|CO0001_CI00002*|HT24005617|~|Amethyst M09 Dago|#|CO0001_CI00002|*|HT24005618|~|Amethyst M26 Dago|#|CO0001_CI00002|*|HT24005619|~|Amethyst M18 Dago|#|CO0001_CI00002|*|HT24005620|~|Amethyst KB05 Lembang|#|CO0001_CI00002|*|HT24005621|~|Amethyst M57 Dago|#|CO0001_CI00002|*|HT24005698|~|Amethyst P12A Dago|#|CO0001_CI00002|*|HT24005699|~|Amethyst M-59 Dago|#|CO0001_CI00002|*|HT24005700|~|Amethyst PG28 Dago|#|CO0001_CI00002|*|HT24005701|~|Amethyst M92 Dago|#|CO0001_CI00002|*|HT24005702|~|Amethyst PR31 Dago|#|CO0001_CI00002|*|HT24005703|~|Amethyst S09 Lembang" />
+
+        <div class="pelican-multiproperty">
+            <div class="destinations">
+                <label class="rsvlabel" >Destinations</label>
+                <select id="slcHotel">
+                    <option value=''>[Select Hotel or Destination]</option>
+                    <option value='ALL' class="citynm">All Hotels</option>
+                    <option value='' disabled></option>
+                    <option value='CI00002' class="citynm">- Bandung -</option>
+                    <option value='HT24005616'>Amethyst M08 Dago</option>
+                    <option value='HT24005617'>Amethyst M09 Dago</option>
+                    <option value='HT24005618'>Amethyst M26 Dago</option>
+                    <option value='HT24005619'>Amethyst M18 Dago</option>
+                    <option value='HT24005620'>Amethyst KB05 Lembang</option>
+                    <option value='HT24005621'>Amethyst M57 Dago</option>
+                    <option value='HT24005698'>Amethyst P12A Dago</option>
+                    <option value='HT24005699'>Amethyst M-59 Dago</option>
+                    <option value='HT24005700'>Amethyst PG28 Dago</option>
+                    <option value='HT24005701'>Amethyst M92 Dago</option>
+                    <option value='HT24005702'>Amethyst PR31 Dago</option>
+                    <option value='HT24005703'>Amethyst S09 Lembang</option>
+                    <option value='HT24005703'>Amethyst CG01 Dago</option>
+                    <option value='HT24005735'>Amethyst F45 Dago</option>
+                    <option value='HT24005746'>Amethyst FE22 Dago</option>
+                    <option value='HT24005742'>Amethyst J8 Lembang</option>
+                    <option value='HT24005703'>Amethyst JB2 Lembang</option>
+                    <option value='HT24005741'>Amethyst JB3 Lembang</option>
+                    <option value='HT24005740'>Amethyst JB3a Lembang </option>
+                    <option value='HT24005745'>Amethyst JB6 Lembang</option>
+                    <option value='HT24005743'>Amethyst JB8 Lembang</option>
+                    <option value='HT24005736'>Amethyst K11 Lembang</option>
+                    <option value='HT24005739'>Amethyst JB7 Lembang</option>
+                    <option value='HT24005738'>Amethyst K28 Dago</option>
+                </select>
+            </div>
+
+            <div class="mpinput">
+                <div class="rsvfield checkin">
+                    <label class="rsvlabel">Check-In Date</label>
+                    <input type="text" id="txtCi" size="12">
+                </div>
+                <div class="rsvfield checkout">
+                    <label class="rsvlabel">Check-Out Date</label>
+                    <input type="text" id="txtCo" size="12">
+                </div>
+
+                <div class="rsvfield room">
+                    <label>Room(s)</label>
+                    <input type="text" id="txtRoom" size="3" maxlength="3" onkeyup='allowNumericOnly(this)' onkeydown='allowNumericOnly(this)' onblur='allowNumericOnly(this)' />
+                </div>
+                <div class="rsvfield adult">
+                    <label>Adult(s)</label>
+                    <input type="text" id="txtAdult" size="3" maxlength="3" onkeyup='allowNumericOnly(this)' onkeydown='allowNumericOnly(this)' onblur='allowNumericOnly(this)' />
+                </div>
+                <div class="rsvfield children">
+                    <label>Children</label>
+                    <input type="text" id="txtChild" size="3" maxlength="2" onkeyup='allowNumericOnly(this)' onkeydown='allowNumericOnly(this)' onblur='allowNumericOnly(this)' />
+                </div>
+                <div class="rsvfield promocd">
+                    <label>Promo Code</label>
+                    <input type="text" id="txtAccessCd" size="3" maxlength="2" />
+                </div>
+            </div>
+            <div class="btnaction">
+                <input type="button" id="btnSearch" value="Search" class="pelican-btn" onclick="fSearch()" />
+            </div>
+        </div>
+    </form>
+</div>
 
 
 	<div class="section">
 		<div class="container">
 			<div class="row mb-5 align-items-center">
 				<div class="col-lg-6">
-					<h2 class="font-weight-bold text-primary heading" id="villa">Villa & Resorts in Bandung</h2>
+                    <h2 class="font-weight-bold" id="villa" style="color: #055555;">Villa & Resorts in Bandung</h2>
 				</div>
 				<div class="col-lg-6 text-lg-end">
 					<p><a href="{{ route('customers.all') }}" target="_blank" class="btn btn-primary text-white py-3 px-4">Lihat Semua Villa</a></p>
@@ -231,7 +480,7 @@
 		<div class="container">
 			<div class="row mb-5 align-items-center">
 				<div class="col-md-6">
-					<h2 class="font-weight-bold heading text-primary mb-4 mb-md-0">Customer Says</h2>
+					<h2 class="font-weight-bold heading mb-4 mb-md-0" style="color: ">Customer Says</h2>
 				</div>
 				<div class="col-md-6 text-md-end">
 					<div id="testimonial-nav">
@@ -276,82 +525,6 @@
 		</div> <!-- /.row -->
 	</div>
 
-<!--
-	<div class="section section-5 bg-light">
-		<div class="container">
-			<div class="row justify-content-center  text-center mb-5">
-				<div class="col-lg-6 mb-5">
-					<h2 class="font-weight-bold heading text-primary mb-4">Our Agents</h2>
-					<p class="text-black-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam enim pariatur similique debitis vel nisi qui reprehenderit totam? Quod maiores.</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
-					<div class="h-100 person">
-
-						<img src="images/person_1-min.jpg" alt="Image"
-						class="img-fluid">
-
-						<div class="person-contents">
-							<h2 class="mb-0"><a href="#">James Doe</a></h2>
-							<span class="meta d-block mb-3">Real Estate Agent</span>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere officiis inventore cumque tenetur laboriosam, minus culpa doloremque odio, neque molestias?</p>
-
-							<ul class="social list-unstyled list-inline dark-hover">
-								<li class="list-inline-item"><a href="#"><span class="icon-twitter"></span></a></li>
-								<li class="list-inline-item"><a href="#"><span class="icon-facebook"></span></a></li>
-								<li class="list-inline-item"><a href="#"><span class="icon-linkedin"></span></a></li>
-								<li class="list-inline-item"><a href="#"><span class="icon-instagram"></span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-
-
-				<div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
-					<div class="h-100 person">
-
-						<img src="images/person_2-min.jpg" alt="Image"
-						class="img-fluid">
-
-						<div class="person-contents">
-							<h2 class="mb-0"><a href="#">Jean Smith</a></h2>
-							<span class="meta d-block mb-3">Real Estate Agent</span>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere officiis inventore cumque tenetur laboriosam, minus culpa doloremque odio, neque molestias?</p>
-
-							<ul class="social list-unstyled list-inline dark-hover">
-								<li class="list-inline-item"><a href="#"><span class="icon-twitter"></span></a></li>
-								<li class="list-inline-item"><a href="#"><span class="icon-facebook"></span></a></li>
-								<li class="list-inline-item"><a href="#"><span class="icon-linkedin"></span></a></li>
-								<li class="list-inline-item"><a href="#"><span class="icon-instagram"></span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0">
-					<div class="h-100 person">
-
-						<img src="images/person_3-min.jpg" alt="Image"
-						class="img-fluid">
-
-						<div class="person-contents">
-							<h2 class="mb-0"><a href="#">Alicia Huston</a></h2>
-							<span class="meta d-block mb-3">Real Estate Agent</span>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere officiis inventore cumque tenetur laboriosam, minus culpa doloremque odio, neque molestias?</p>
-
-							<ul class="social list-unstyled list-inline dark-hover">
-								<li class="list-inline-item"><a href="#"><span class="icon-twitter"></span></a></li>
-								<li class="list-inline-item"><a href="#"><span class="icon-facebook"></span></a></li>
-								<li class="list-inline-item"><a href="#"><span class="icon-linkedin"></span></a></li>
-								<li class="list-inline-item"><a href="#"><span class="icon-instagram"></span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
--->
 	<div class="site-footer">
 		<div class="container">
 
@@ -414,6 +587,7 @@
     </div>
 
 
+
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/tiny-slider.js"></script>
     <script src="js/aos.js"></script>
@@ -422,7 +596,7 @@
     <script src="js/custom.js"></script>
 	@include('sweetalert::alert')
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 $(document).ready(function() {
     // Cek apakah session flash "wa_message" ada
@@ -444,6 +618,29 @@ $(document).ready(function() {
         });
     @endif
 });
+
+
 </script>
+<script>
+    $(document).ready(function() {
+        // Inisialisasi datepicker untuk Check-In dan Check-Out
+        $("#txtCi").datepicker({
+            dateFormat: "yy-mm-dd", // Format tanggal (sesuaikan dengan kebutuhan Anda)
+            minDate: 0, // Tidak bisa memilih tanggal sebelum hari ini
+            onSelect: function(selectedDate) {
+                var minDate = $(this).datepicker('getDate');
+                minDate.setDate(minDate.getDate() + 1);
+                $("#txtCo").datepicker("option", "minDate", minDate);
+            }
+        });
+
+        $("#txtCo").datepicker({
+            dateFormat: "yy-mm-dd",
+            minDate: 1 // Set minimum tanggal Check-Out sebagai hari berikutnya setelah Check-In
+        });
+    });
+    </script>
+
+
   </body>
   </html>
