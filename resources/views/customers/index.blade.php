@@ -7,7 +7,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-
     <title>Amethyst Villas Management</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link type="text/css" href="css/style.css" rel="Stylesheet" />
@@ -34,9 +33,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-
 	<meta name="description" content="" />
 	<meta name="keywords" content="bootstrap, bootstrap5" />
 
@@ -53,205 +49,6 @@
 	<link rel="stylesheet" href="csss/style.css">
 
 	<title>VILLA &mdash; BANDUNG </title>
-	<style>
-		.review-image {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-	}
-	.green-box {
-        background-color: #055555; /* Warna hijau */
-        padding: 50px;
-		width: 115%;
-		margin-left: -15%;
-		border-radius: 30px;
-      	box-shadow: 0 8px 10px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .green-box p {
-        color: white;
-		font-size: 18px;
-    }
-
-	.grean-box {
-        background-color: #055555; /* Warna hijau */
-        padding: 50px;
-		width: 115%;
-		margin-left: 8%;
-		border-radius: 30px;
-      	box-shadow: 0 8px 10px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .grean-box p {
-        color: white;
-		font-size: 18px;
-    }
-
-    .btn {
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 16px;
-        text-align: center;
-        text-decoration: none;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-        border: none;
-        cursor: pointer;
-    }
-
-	.left-align {
-    text-align: left;
-	}
-
-    .pelican-reservation {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 50px;
-        background-color: #ffffff;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        font-family: 'Helvetica Neue', Arial, sans-serif;
-        display: flex; /* Menambahkan display flex */
-        flex-direction: column; /* Menambahkan flex-direction column */
-        align-items: center; /* Menambahkan align-items center */
-    }
-
-    .pelican-reservation .rsvlabel {
-        font-weight: 600;
-        margin-bottom: 8px;
-        display: block;
-        color: #333;
-    }
-
-    .pelican-reservation .pelican-multiproperty {
-        display: flex;
-        flex-direction: column;
-        gap: 20px; /* Untuk memberi jarak antar elemen form */
-        align-items: flex-end; /* Menyelaraskan semua elemen ke kanan */
-        width: 100%; /* Menambahkan lebar 100% */
-    }
-
-    .pelican-reservation .destinations {
-        width: 100%;
-    }
-
-    .pelican-reservation select,
-    .pelican-reservation input[type="text"] {
-        width: 100%;
-        padding: 12px;
-        margin-top: 5px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        box-sizing: border-box;
-        font-size: 16px;
-        transition: border-color 0.3s ease, box-shadow 0.9s ease;
-    }
-
-    .pelican-reservation select:focus,
-    .pelican-reservation input[type="text"]:focus {
-        border-color: #055555;
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    }
-
-    .pelican-reservation .mpinput {
-        display: flex;
-        gap: 20px; /* Jarak antar field */
-        align-items: center;
-        flex-wrap: wrap; /* Agar field bisa membungkus pada layar kecil */
-    }
-
-    .pelican-reservation .rsvfield {
-        flex: 1 1 calc(10% - 10px); /* Lebar setiap field */
-        min-width: 150px; /* Lebar minimum untuk field */
-        margin-bottom: 0;
-        box-sizing: border-box; /* Agar margin dan padding diperhitungkan dalam lebar */
-    }
-
-    .pelican-reservation .btnaction {
-        display: flex;
-        gap: 5px;
-        justify-content: center; /* Menyelaraskan tombol ke tengah */
-        margin-top: 30px;
-        width: 100%; /* Menambahkan lebar 100% */
-    }
-
-    .pelican-reservation .btnaction input[type="button"] {
-        padding: 12px 25px;
-        border: none;
-        background-color: #055555;
-        color: #fff;
-        font-size: 18px;
-        cursor: pointer;
-        border-radius: 6px;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .pelican-reservation .btnaction input[type="button"]:hover {
-        background-color: #055555;
-        transform: translateY(-2px);
-    }
-
-    .pelican-reservation .btnaction input[type="button"]:active {
-        background-color: #055555;
-        transform: translateY(0);
-    }
-
-    #villa {
-        color: #055555;
-    }
-
-    .text-primary {
-        color: #055555;
-    }
-
-    /* Responsif untuk layar yang lebih kecil */
-    @media (max-width: 992px) {
-        .pelican-reservation {
-            padding: 30px;
-        }
-
-        .pelican-reservation .mpinput {
-            flex-direction: column;
-            align-items: center; /* Menyelaraskan elemen ke tengah */
-        }
-
-        .pelican-reservation .rsvfield {
-            flex: 1 1 100%; /* Menyesuaikan lebar field */
-            min-width: 0;
-        }
-
-        .pelican-reservation .btnaction {
-            justify-content: center;
-        }
-
-        .pelican-reservation .btnaction input[type="button"] {
-            width: 100%;
-            text-align: center;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .pelican-reservation {
-            padding: 20px;
-        }
-
-        .pelican-reservation .rsvlabel {
-            font-size: 14px;
-        }
-
-        .pelican-reservation select,
-        .pelican-reservation input[type="text"] {
-            font-size: 14px;
-            padding: 10px;
-        }
-
-        .pelican-reservation .btnaction input[type="button"] {
-            padding: 10px 20px;
-            font-size: 16px;
-        }
-    }
-
-	</style>
 </head>
 <body>
 
@@ -269,7 +66,6 @@
 			<div class="menu-bg-wrap">
 				<div class="site-navigation">
 					<a href="https://villadibandung.com/" class="logo m-0 float-start">Villa di Bandung </a>
-
 					<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
 						<li class="has-children"><a href="#home" id="home">Home</a></li>
 						<li class="has-children">
@@ -308,22 +104,16 @@
                                 Book Now
                             </a>
                         </li>
-
 					</ul>
-
 					<a href="#" class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
 						<span></span>
 					</a>
-
 				</div>
 			</div>
 		</div>
 	</nav>
 
-
 	<div class="hero">
-
-
 		<div class="hero-slide">
 			<div class="img overlay" style="background-image: url('images/hero_bg_001.jpg')"></div>
 			<div class="img overlay" style="background-image: url('images/hero_bg_002.jpg')"></div>
@@ -418,7 +208,6 @@
     </form>
 </div>
 
-
 	<div class="section">
 		<div class="container">
 			<div class="row mb-5 align-items-center">
@@ -509,13 +298,9 @@
 					@endforeach
 				</div>
 			</div>
-
 		</div>
 	</div>
 
-			</div>
-		</div>
-	</div>
 	<div class="section">
 		<div class="row justify-content-center footer-cta" data-aos="fade-up">
 			<div class="col-lg-7 mx-auto text-center">
@@ -558,8 +343,6 @@
 						</ul>
 					</div> <!-- /.widget -->
 				</div> <!-- /.col-lg-4 -->
-
-
 			<div class="row mt-5">
 				<div class="col-12 text-center">
 					<!--
@@ -577,7 +360,6 @@
       </div> <!-- /.container -->
     </div> <!-- /.site-footer -->
 
-
     <!-- Preloader -->
     <div id="overlayer"></div>
     <div class="loader">
@@ -586,8 +368,6 @@
     	</div>
     </div>
 
-
-
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/tiny-slider.js"></script>
     <script src="js/aos.js"></script>
@@ -595,7 +375,6 @@
     <script src="js/counter.js"></script>
     <script src="js/custom.js"></script>
 	@include('sweetalert::alert')
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 $(document).ready(function() {
@@ -618,8 +397,6 @@ $(document).ready(function() {
         });
     @endif
 });
-
-
 </script>
 <script>
     $(document).ready(function() {
@@ -640,7 +417,5 @@ $(document).ready(function() {
         });
     });
     </script>
-
-
   </body>
   </html>
