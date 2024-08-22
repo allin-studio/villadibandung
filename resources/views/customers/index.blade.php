@@ -7,22 +7,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Amethyst Villas Management</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link type="text/css" href="css/style.css" rel="Stylesheet" />
-        <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/jquery-ui.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/reservation.js') }}"></script>
-        <script type="text/javascript">
-            var _strHtlCCCode = "HCC2400197";
-            var _strPath = "https://reservation.smartbooking-asia.com/";
-            var _strBackurl = "https://reservation.smartbooking-asia.com/booking/index.aspx?htlcccode=" + _strHtlCCCode;
-            var _intDefaultLOS = 2;
-            var _intDefaultCi = 0;
-            var _intDefaultRoom = 1;
-            var _intDefaultAdult = 1;
-            var _intDefaultChild = 0;
-        </script>
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,6 +31,47 @@
 	<link rel="stylesheet" href="csss/tiny-slider.css">
 	<link rel="stylesheet" href="csss/aos.css">
 	<link rel="stylesheet" href="csss/style.css">
+
+    <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery-ui.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/reservation.js') }}"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            // Initialize the datepickers
+            $("#txtCi").datepicker({
+                dateFormat: 'yy-mm-dd', // Change format as needed
+                minDate: 0 // Prevent selection of past dates
+            });
+
+            $("#txtCo").datepicker({
+                dateFormat: 'yy-mm-dd', // Change format as needed
+                minDate: 1 // Ensure check-out is after check-in
+            });
+
+            // Prevent numeric-only input for rooms, adults, and children
+            function allowNumericOnly(element) {
+                element.value = element.value.replace(/[^0-9]/g, '');
+            }
+
+            // Set the default values
+            $("#txtCi").val(new Date().toISOString().slice(0,10)); // Default Check-In Date
+            $("#txtCo").val(new Date(new Date().setDate(new Date().getDate() + 1)).toISOString().slice(0,10)); // Default Check-Out Date
+            $("#txtRoom").val("1"); // Default Room
+            $("#txtAdult").val("1"); // Default Adult
+            $("#txtChild").val("0"); // Default Children
+        });
+
+        // Configuration for SmartBooking
+        var _strHtlCCCode = "HCC2400197";
+        var _strPath = "https://reservation.smartbooking-asia.com/";
+        var _strBackurl = "https://reservation.smartbooking-asia.com/booking/index.aspx?htlcccode=" + _strHtlCCCode;
+        var _intDefaultLOS = 2;
+        var _intDefaultCi = 0;
+        var _intDefaultRoom = 1;
+        var _intDefaultAdult = 1;
+        var _intDefaultChild = 0;
+    </script>
 
 	<title>VILLA &mdash; BANDUNG </title>
 </head>
@@ -127,7 +152,7 @@
 					<form action="#" class="narrow-w form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
 						<input type="text" class="form-control px-4" placeholder="   villadibandung.com">
 						<button type="submit" class="btn btn-primary">Search</button>
-					</form>
+                    </form>
 				</div>
 			</div>
 		</div>
@@ -141,7 +166,7 @@
 
         <div class="pelican-multiproperty">
             <div class="destinations">
-                <label class="rsvlabel" >Destinations</label>
+                <label class="rsvlabel">Destinations</label>
                 <select id="slcHotel">
                     <option value=''>[Select Hotel or Destination]</option>
                     <option value='ALL' class="citynm">All Hotels</option>
@@ -398,24 +423,5 @@ $(document).ready(function() {
     @endif
 });
 </script>
-<script>
-    $(document).ready(function() {
-        // Inisialisasi datepicker untuk Check-In dan Check-Out
-        $("#txtCi").datepicker({
-            dateFormat: "yy-mm-dd", // Format tanggal (sesuaikan dengan kebutuhan Anda)
-            minDate: 0, // Tidak bisa memilih tanggal sebelum hari ini
-            onSelect: function(selectedDate) {
-                var minDate = $(this).datepicker('getDate');
-                minDate.setDate(minDate.getDate() + 1);
-                $("#txtCo").datepicker("option", "minDate", minDate);
-            }
-        });
-
-        $("#txtCo").datepicker({
-            dateFormat: "yy-mm-dd",
-            minDate: 1 // Set minimum tanggal Check-Out sebagai hari berikutnya setelah Check-In
-        });
-    });
-    </script>
   </body>
   </html>

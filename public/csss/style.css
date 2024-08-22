@@ -89,6 +89,32 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
+  .booking-form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.form-group {
+    margin-bottom: 15px;
+    flex: 1 1 calc(33.333% - 15px);
+}
+.form-label {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.datepicker {
+    width: 100%;
+}
+.btn-primary {
+    background-color: #055555;
+    border-color: #055555;
+}
+.btn-primary:hover {
+    background-color: #043b3a;
+    border-color: #043b3a;
+}
+
   .review-image {
     width: 100%;
     height: auto;
