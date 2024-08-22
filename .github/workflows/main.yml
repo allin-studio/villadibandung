@@ -13,7 +13,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
-        server: admin@villadibandung.com
-        username: ftp.bfacilityservice.com
+        server: ftp.bfacilityservice.com
+        username: admin@villadibandung.com 
         password: 2024@Villa
         server-dir: /
