@@ -40,13 +40,31 @@
         $(function() {
             // Initialize the datepickers
             $("#txtCi").datepicker({
-                dateFormat: 'yy-mm-dd', // Change format as needed
+                dateFormat: 'mm/dd/yy', // Format yang sesuai untuk SmartBooking
                 minDate: 0 // Prevent selection of past dates
             });
 
             $("#txtCo").datepicker({
-                dateFormat: 'yy-mm-dd', // Change format as needed
+                dateFormat: 'mm/dd/yy', // Format yang sesuai untuk SmartBooking
                 minDate: 1 // Ensure check-out is after check-in
+            });
+
+            // Function to convert date format from mm/dd/yy to mm/dd/yyyy
+            function formatDate(dateStr) {
+                var parts = dateStr.split('/');
+                var year = (parseInt(parts[2]) < 1000) ? '20' + parts[2] : parts[2]; // Handle year
+                return parts[0] + '/' + parts[1] + '/' + year; // mm/dd/yyyy
+            }
+
+            // Update date fields with correct format
+            $("#txtCi").on('change', function() {
+                var formattedDate = formatDate($(this).val());
+                $(this).val(formattedDate);
+            });
+
+            $("#txtCo").on('change', function() {
+                var formattedDate = formatDate($(this).val());
+                $(this).val(formattedDate);
             });
 
             // Prevent numeric-only input for rooms, adults, and children
@@ -55,22 +73,25 @@
             }
 
             // Set the default values
-            $("#txtCi").val(new Date().toISOString().slice(0,10)); // Default Check-In Date
-            $("#txtCo").val(new Date(new Date().setDate(new Date().getDate() + 1)).toISOString().slice(0,10)); // Default Check-Out Date
+            $("#txtCi").val(formatDate(new Date().toLocaleDateString())); // Default Check-In Date
+            $("#txtCo").val(formatDate(new Date(new Date().setDate(new Date().getDate() + 1)).toLocaleDateString())); // Default Check-Out Date
             $("#txtRoom").val("1"); // Default Room
             $("#txtAdult").val("1"); // Default Adult
             $("#txtChild").val("0"); // Default Children
         });
+
 
         // Configuration for SmartBooking
         var _strHtlCCCode = "HCC2400197";
         var _strPath = "https://reservation.smartbooking-asia.com/";
         var _strBackurl = "https://reservation.smartbooking-asia.com/booking/index.aspx?htlcccode=" + _strHtlCCCode;
         var _intDefaultLOS = 2;
-        var _intDefaultCi = 0;
-        var _intDefaultRoom = 1;
-        var _intDefaultAdult = 1;
-        var _intDefaultChild = 0;
+        var checkInDate = $("#txtCi").val(); // Format mm/dd/yyyy
+        var checkOutDate = $("#txtCo").val(); // Format mm/dd/yyyy
+        var rooms = $("#txtRoom").val();
+        var adults = $("#txtAdult").val();
+        var children = $("#txtChild").val();
+
     </script>
 
 	<title>VILLA &mdash; BANDUNG </title>
