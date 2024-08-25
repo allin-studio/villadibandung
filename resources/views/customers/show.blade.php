@@ -144,7 +144,7 @@
 					<div id="map">
 
                     <a href="{{ route('createBookingForm', ['id' => $vila->id]) }}" class="btn btn-primary">Manual Booking</a>
-                    <a href="{{ route('reservation.details', ['id' => $vila->id]) }}" class="btn btn-primary">Online Booking</a>
+                    {{--  <a href="{{ route('reservation.details', ['id' => $vila->id]) }}" class="btn btn-primary">Online Booking</a>  --}}
                     {{--  <a href="{{ route('reservation.form') }}" class="btn btn-primary">Online Booking</a>  --}}
 
 				<!--
