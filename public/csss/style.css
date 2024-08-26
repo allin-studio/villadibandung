@@ -269,16 +269,17 @@ body {
     @media (max-width: 992px) {
         .pelican-reservation {
             padding: 30px;
+            width: 100%;
         }
 
         .pelican-reservation .mpinput {
             flex-direction: column;
-            align-items: center; /* Menyelaraskan elemen ke tengah */
+            align-items: center;
+            width: 100%; /* Menyelaraskan elemen ke tengah */
         }
 
-        .pelican-reservation .rsvfield {
-            flex: 1 1 100%; /* Menyesuaikan lebar field */
-            min-width: 0;
+        .pelican-reservation .rsvfield { /* Menyesuaikan lebar field */
+            width: 100%;
         }
 
         .pelican-reservation .btnaction {
@@ -302,8 +303,8 @@ body {
 
         .pelican-reservation select,
         .pelican-reservation input[type="text"] {
-            font-size: 14px;
-            padding: 10px;
+            font-size: 20px;
+            padding: 15px;
         }
 
         .pelican-reservation .btnaction input[type="button"] {
