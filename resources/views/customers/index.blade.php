@@ -181,7 +181,7 @@
 <br>
 <br>
 <div class="pelican-reservation">
-    <form method="post" id="form1" action="" class="col g-3">
+    <form method="post" id="form1" action="">
         <input type="hidden" id="hdnCO0001" value="CI00002|~|Bandung"/>
         <input type="hidden" id="hdnHotelData" value="CO0001_CI00002*|HT24005616|~|Amethyst M08 Dago|#|CO0001_CI00002*|HT24005617|~|Amethyst M09 Dago|#|CO0001_CI00002|*|HT24005618|~|Amethyst M26 Dago|#|CO0001_CI00002|*|HT24005619|~|Amethyst M18 Dago|#|CO0001_CI00002|*|HT24005620|~|Amethyst KB05 Lembang|#|CO0001_CI00002|*|HT24005621|~|Amethyst M57 Dago|#|CO0001_CI00002|*|HT24005698|~|Amethyst P12A Dago|#|CO0001_CI00002|*|HT24005699|~|Amethyst M-59 Dago|#|CO0001_CI00002|*|HT24005700|~|Amethyst PG28 Dago|#|CO0001_CI00002|*|HT24005701|~|Amethyst M92 Dago|#|CO0001_CI00002|*|HT24005702|~|Amethyst PR31 Dago|#|CO0001_CI00002|*|HT24005703|~|Amethyst S09 Lembang" />
 
@@ -299,10 +299,10 @@
 					@endif
 				@endforeach
 						</div>
-						<div id="property-nav" class="controls" tabindex="0" aria-label="Carousel Navigation">
+						{{--  <div id="property-nav" class="controls" tabindex="0" aria-label="Carousel Navigation">
 							<span class="prev" data-controls="prev" aria-controls="property" tabindex="-1">Prev</span>
 							<span class="next" data-controls="next" aria-controls="property" tabindex="-1">Next</span>
-						</div>
+						</div>  --}}
 
 					</div>
 				</div>
