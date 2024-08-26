@@ -50,6 +50,29 @@
 		.p {
 			font-size: 40px;
 		}
+
+        .btn-spacing {
+            display: inline-block;
+            margin-right: 10px; /* Sesuaikan jarak sesuai kebutuhan */
+        }
+
+        .btn-spacing:last-child {
+            margin-right: 0; /* Hilangkan margin pada tombol terakhir */
+        }
+
+        .btn {
+            margin-right: 0px !important;
+            padding: 10px 24px !important;
+            display: inline-block !important;
+        }
+
+        .btn:last-child {
+            margin-right: 0 !important;
+        }
+
+
+
+
     </style>
 
 </head>
@@ -143,8 +166,12 @@
 					<p class="text-black-50 fs-5">{{ $vila->fasilitas }}</p>
 					<div id="map">
 
-                    <a href="{{ route('createBookingForm', ['id' => $vila->id]) }}" class="btn btn-primary">Manual Booking</a>
-                    <a href="{{ route('reservation.details', ['id' => $vila->id]) }}" class="btn btn-primary">Online Booking</a>
+                        <div style="display: flex; justify-content: flex-start; gap: 15px;">
+                            <a href="{{ route('createBookingForm', ['id' => $vila->id]) }}" class="btn btn-primary">Manual Booking</a>
+                            <a href="{{ route('reservation.details', ['id' => $vila->id]) }}" class="btn btn-primary">Online Booking</a>
+                        </div>
+
+
                     {{--  <a href="{{ route('reservation.form') }}" class="btn btn-primary">Online Booking</a>  --}}
 
 				<!--

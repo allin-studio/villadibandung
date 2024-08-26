@@ -10036,7 +10036,7 @@ textarea {
     border: none; }
 
 .hero-slider-wrap .tns-nav {
-  position: absolute;
+  position: absolu;
   right: 20px;
   top: 50%;
   -webkit-transform: translateY(-50%);
