@@ -48,7 +48,7 @@
 			object-fit: cover;
 		}
 		.p {
-			font-size: 40px;
+			font-size: 10px;
 		}
 
         .btn-spacing {
@@ -69,10 +69,6 @@
         .btn:last-child {
             margin-right: 0 !important;
         }
-
-
-
-
     </style>
 
 </head>
@@ -123,7 +119,6 @@
 		</div>
 	</div>
 
-
 	<div class="section">
 		<div class="container">
 			<div class="row justify-content-between">
@@ -173,27 +168,6 @@
 
 
                     {{--  <a href="{{ route('reservation.form') }}" class="btn btn-primary">Online Booking</a>  --}}
-
-				<!--
-					<div class="d-block agent-box p-5">
-						<div class="img mb-4">
-							<img src="images/person_2-min.jpg" alt="Image" class="img-fluid">
-						</div>
-						<div class="text">
-							<h3 class="mb-0">Alicia Huston</h3>
-							<div class="meta mb-3">Real Estate</div>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione laborum quo quos omnis sed magnam id ducimus saepe</p>
-							<ul class="list-unstyled social dark-hover d-flex">
-								<li class="me-1"><a href="#"><span class="icon-instagram"></span></a></li>
-								<li class="me-1"><a href="#"><span class="icon-twitter"></span></a></li>
-								<li class="me-1"><a href="#"><span class="icon-facebook"></span></a></li>
-								<li class="me-1"><a href="#"><span class="icon-linkedin"></span></a></li>
-
-							</ul>
-						</div>
-					</div>
-				-->
-
 
 				</div>
 			</div>
