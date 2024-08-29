@@ -67,7 +67,7 @@
         cursor: pointer;
         text-decoration: none;
     }
-    
+
 
     .cancel-btn:hover {
         background-color: #b3b3b3;
@@ -112,7 +112,7 @@
 <body>
 <!-- resources/views/vilas/create.blade.php -->
 <div class="container-lg">
-@extends('layouts.app')
+@extends('layouts.custom')
 
 @section('content')
 <div class="container-fluid">
@@ -135,7 +135,7 @@
                 <option value="Dago">Dago</option>
             </select>
         </div>
-        
+
 
         <div class="col-md-6">
         <label for="deskripsi" class="form-label">Deskripsi:</label>
@@ -153,7 +153,7 @@
                 <option value="Bedroom 6">Bedroom 6</option>
             </select>
         </div>
-        
+
 
         <div class="col-md-6">
         <label for="jumlah_kamar_mandi" class="form-tabel">Jumlah Kamar Mandi:</label>
@@ -166,7 +166,7 @@
             <option value="6">6</option>
         </select>
         </div>
-        
+
         <div class="col-md-6">
         <label for="kapasitas" class="form-tabel">Kapasitas</label>
         <input type="text" name="kapasitas" id="kapasitas" placeholder="4 orang" required>
@@ -176,7 +176,7 @@
             <label for="harga" class="form-tabel">Harga/Hari Weekday</label>
             <input type="text" name="harga" id="harga" placeholder="1000000" required>
         </div>
-                
+
         <div class="col-md-6">
             <label for="harga" class="form-tabel">Harga/Hari Weekend</label>
             <input type="text" name="harga_weekend" id="harga" placeholder="1000000" required>

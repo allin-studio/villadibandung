@@ -5,16 +5,16 @@
         <title>Sidebar 03</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        
+
 
         <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">      
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="//cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 
-        
+
         <style>
                 /* Tambahkan gaya CSS untuk memperkecil ukuran teks pada logo */
                 .logo {
@@ -23,32 +23,32 @@
                 body {
                     font-family: Arial, sans-serif;
                 }
-            
+
                 h1 {
                     text-align: center;
                     margin-bottom: 20px;
                 }
-            
+
                 table {
                     width: 100%;
                     border-collapse: collapse;
                 }
-            
+
                 th,
                 td {
                     padding: 5px;
                     text-align: left;
                     border-bottom: 1px solid #ddd;
                 }
-            
+
                 th {
                     background-color: #f2f2f2;
                 }
-            
+
                 tr:hover {
                     background-color: #f5f5f5;
                 }
-            
+
                 .add-btn {
                     display: block;
                     width: 150px;
@@ -60,18 +60,18 @@
                     text-decoration: none;
                     border-radius: 4px;
                 }
-            
+
                 .add-btn:hover {
                     background-color: #45a049;
                 }
-            
+
                 img {
                     max-width: 100px;
                     max-height: 100px;
                 }
                 .edit-btn,
                 .delete-btn {
-                    
+
                     display: inline-block;
                     padding: 8px 15px;
                     background-color: #007bff;
@@ -82,11 +82,11 @@
                     text-decoration: none;
                     margin-right: 5px;
                 }
-            
+
                 .delete-btn {
                     background-color: #dc3545;
                 }
-            
+
                 .edit-btn:hover,
                 .delete-btn:hover {
                     background-color: #0056b3;
@@ -124,7 +124,7 @@
             }
         }
         </style>
-    </head>      
+    </head>
     <div class="sidebar-inner-slimscroll">
     <div class="wrapper d-flex align-items-stretch">
                 <nav id="sidebar" class="active">
@@ -214,7 +214,7 @@
                                 <a href="{{ route('vila.edit', $vila->id) }}" class="edit-btn">Edit</a>
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="delete-btn" id="delete">Delete</button>       
+                                <button type="submit" class="delete-btn" id="delete">Delete</button>
                             </form>
                         </td>
                         <td><a href="{{ route('vila.show', $vila->id) }}" class="btn btn-info">Detail Villa</a></td>

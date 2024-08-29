@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-		
+
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
 		<style>
@@ -18,7 +18,7 @@
         </style>
   </head>
   <body>
-		
+
 		<div class="wrapper d-flex align-items-stretch">
 			<nav id="sidebar" class="active">
 				<div class="custom-menu">
@@ -74,8 +74,8 @@
         <p >vila adalah jenis properti atau bangunan hunian yang umumnya berukuran besar dan mewah. vila biasanya berdiri sendiri di atas lahan yang luas dan dikelilingi oleh taman atau kebun yang indah. Istilah "vila" berasal dari bahasa Latin "villa," yang awalnya mengacu pada sebuah rumah pedesaan atau tempat tinggal di luar kota pada zaman Romawi kuno..</p>
 		<p>vila sering dianggap sebagai tempat liburan atau tempat peristirahatan yang ideal, karena menyediakan ruang lebih banyak daripada rumah biasa dan menawarkan privasi yang lebih tinggi. Fasilitas yang umumnya ada di vila meliputi beberapa kamar tidur, kamar mandi, ruang keluarga, dapur, kolam renang pribadi, area bersantai di luar ruangan, dan bahkan fasilitas rekreasi atau olahraga tertentu.</p>
 		<p>Sifat mewah dan eksklusif dari vila sering kali membuatnya menjadi pilihan populer bagi wisatawan kelas atas, keluarga besar yang ingin berkumpul, atau untuk acara-acara spesial seperti pernikahan atau acara bisnis. vila juga dapat dijadikan investasi properti yang menguntungkan dengan menyewakannya kepada wisatawan atau pengunjung untuk mendapatkan pendapatan tambahan.</p>
-	
-	
+
+
 	</div>
 		</div>
 

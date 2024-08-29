@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Reservation Details</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
-    <style>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Booking Form HTML Template</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css" />
+	<style>
         body {
-            background-image: url('images/hero_bg_001.jpg');
+            background-image: url('{{ asset('images/background.jpg') }}');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -28,63 +30,93 @@
             border: 1px solid #ddd;
             border-radius: .25rem;
         }
-    </style>
+	</style>
 </head>
+
 <body>
+	<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7 col-md-push-5">
+						<div class="booking-cta">
+							<h1>Make Your Reservation</h1>
+							<p>Complete the form below to make a reservation at {{ $vila->nama_vila }}.</p>
+                            <div class="gallery">
+                                <div class="d-flex overflow-auto mb-4">
+                                    @foreach ($vila->foto as $photo)
+                                        <img src="{{ asset('storage/' . $photo) }}" alt="{{ $vila->nama_vila }}" class="me-3">
+                                    @endforeach
+                                </div>
+                            </div>
+						</div>
+					</div>
+					<div class="col-md-4 col-md-pull-7">
+						<div class="booking-form">
+							<form id="reservationForm" class="row g-3">
+								@csrf
+								<div class="form-group">
+									<span class="form-label">Your Destination</span>
+									<input class="form-control" type="text" value="{{ $vila->nama_vila }}" readonly>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Check In</span>
+											<input type="text" id="checkin" name="checkin" class="form-control" placeholder="Choose date" required>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Check Out</span>
+											<input type="text" id="checkout" name="checkout" class="form-control" placeholder="Choose date" required>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="form-group">
+											<span class="form-label">Rooms</span>
+											<input type="number" id="rooms" name="rooms" class="form-control" required>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<span class="form-label">Adults</span>
+											<input type="number" id="adults" name="adults" class="form-control" required>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<span class="form-label">Children</span>
+											<input type="number" id="children" name="children" class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<span class="form-label">Promo Code</span>
+									<input type="text" id="access_code" name="access_code" class="form-control">
+								</div>
+								<input type="hidden" name="vila_id" id="vila_id" value="{{ $vila->id }}">
+								<div class="form-btn">
+									<button type="submit" class="btn btn-primary">Submit Reservation</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <div class="container">
-        <div class="gallery">
-            <h2>Gallery</h2>
-            <div class="d-flex overflow-auto mb-4">
-                @foreach ($vila->foto as $photo)
-                    <img src="{{ asset('storage/' . $photo) }}" alt="{{ $vila->nama_vila }}" class="me-3">
-                @endforeach
-            </div>
-        </div>
-
-        <h1>Reservation for {{ $vila->nama_vila }}</h1>
-
-        <form id="reservationForm" class="row g-3">
-            @csrf
-            <div class="col-md-6">
-                <label for="checkin" class="form-label">Check-in Date</label>
-                <input type="text" id="checkin" name="checkin" class="form-control" placeholder="Choose date" required>
-            </div>
-            <div class="col-md-6">
-                <label for="checkout" class="form-label">Check-out Date</label>
-                <input type="text" id="checkout" name="checkout" class="form-control" placeholder="Choose date" required>
-            </div>
-            <div class="col-md-6">
-                <label for="rooms" class="form-label">Rooms</label>
-                <input type="number" id="rooms" name="rooms" class="form-control" required>
-            </div>
-            <div class="col-md-6">
-                <label for="adults" class="form-label">Adults</label>
-                <input type="number" id="adults" name="adults" class="form-control" required>
-            </div>
-            <div class="col-md-6">
-                <label for="children" class="form-label">Children</label>
-                <input type="number" id="children" name="children" class="form-control">
-            </div>
-            <div class="col-md-6">
-                <label for="access_code" class="form-label">Promo Code</label>
-                <input type="text" id="access_code" name="access_code" class="form-control">
-            </div>
-            <input type="hidden" name="vila_id" id="vila_id" value="{{ $vila->id }}">
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Submit Reservation</button>
-            </div>
-        </form>
-    </div>
-
-    <footer class="text-center mt-4">
+	<footer class="text-center mt-4">
         <p>&copy; {{ date('Y') }} VilladiBandung. All rights reserved.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
-    <script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+	<script>
         var $pelican = jQuery.noConflict();
         $pelican(function () {
             var _intDefaultCi = 1;
@@ -142,24 +174,34 @@
                     '57': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005700&amp%3blang=EN',
                     '48': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005738&amp;lang=EN',
                     '47': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005746&amp;lang=EN',
+                    'jb2': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005742&amp;lang=EN',
+                    'jb3a': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005740&amp;lang=EN',
+                    'jb3': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005741&amp;lang=EN',
+                    'jb7': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005739&amp;lang=EN',
+                    'jb6': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005745&amp;lang=EN',
+                    'k28': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005738&amp;lang=EN',
+                    'jb8': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005743&amp;lang=EN',
+                    'k11': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005736&amp;lang=EN',
+                    'f45': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005735&amp;lang=EN',
                     '55': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005698&amp%3blang=EN'
                 };
 
-                var bookingUrl = urlMap[villaId] || '#';
-                if (bookingUrl !== '#') {
-                    var reservationUrl = `${bookingUrl}&checkin=${checkin}&checkout=${checkout}&rooms=${rooms}&adults=${adults}&children=${children}&accesscode=${accessCode}`;
-                    window.location.href = reservationUrl;
+                if (urlMap[villaId]) {
+                    window.location.href = urlMap[villaId];
                 } else {
-                    alert("Booking URL not found for this villa.");
+                    alert('Invalid villa ID!');
                 }
             });
-        });
 
-        function getDate(dt) {
-            var strMonth = (dt.getMonth() + 1).toString().padStart(2, '0');
-            var strDay = dt.getDate().toString().padStart(2, '0');
-            return `${strMonth}/${strDay}/${dt.getFullYear()}`;
-        }
-    </script>
+            // Helper functions
+            function getDate(dtDate) {
+                var dtYear = dtDate.getFullYear();
+                var dtMonth = dtDate.getMonth() + 1;
+                var dtDay = dtDate.getDate();
+                return (dtMonth < 10 ? '0' + dtMonth : dtMonth) + '/' + (dtDay < 10 ? '0' + dtDay : dtDay) + '/' + dtYear;
+            }
+        });
+	</script>
 </body>
+
 </html>
