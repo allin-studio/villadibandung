@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tambah Pegawai</title>
+    <title>Tambah Villa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -117,7 +117,7 @@
                     <option value="Dago">Dago</option>
                 </select>
             </div>
-    
+
             <div class="col-md-6">
                 <label for="deskripsi" class="form-label">Deskripsi</label>
                 <textarea name="deskripsi" id="deskripsi" required>{{ $vila->deskripsi }}</textarea>
@@ -134,7 +134,7 @@
                     <option value="Bedroom 6">Bedroom 6</option>
                 </select>
             </div>
-    
+
             <div class="col-md-3">
                 <label for="kapasitas" class="form-label">Kapasitas</label>
                 <input type="text" name="kapasitas" id="kapasitas" value="{{ $vila->kapasitas }}" required>
@@ -151,12 +151,12 @@
                     <option value="6">6</option>
                 </select>
                 </div>
-    
+
             <div class="col-md-6">
                 <label for="fasilitas" class="form-label">Fasilitas</label>
                 <textarea name="fasilitas" id="fasilitas" required>{{ $vila->fasilitas }}</textarea>
             </div>
-    
+
             <div class="col-md-3">
                 <label for="harga" class="form-label">Harga Weekday</label>
                 <input type="text" name="harga" id="harga" value="{{ $vila->harga }}" required>
@@ -195,7 +195,7 @@
 </div>
         </div>
         </div>
-        
+
     @endsection
 </body>
 </html>
