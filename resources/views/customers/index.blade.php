@@ -205,10 +205,10 @@
                     <option value='HT24005701'>Amethyst M92 Dago</option>
                     <option value='HT24005702'>Amethyst PR31 Dago</option>
                     <option value='HT24005703'>Amethyst S09 Lembang</option>
-                    <option value='#'>Amethyst CG01 Dago</option>
+                    <option value='HT24005737'>Amethyst CG01 Dago</option>
                     <option value='HT24005735'>Amethyst F45 Dago</option>
                     <option value='HT24005746'>Amethyst FE22 Dago</option>
-                    <option value='#'>Amethyst J8 Lembang</option>
+                    <option value='HT24005744'>Amethyst J8 Lembang</option>
                     <option value='HT24005742'>Amethyst JB2 Lembang</option>
                     <option value='HT24005741'>Amethyst JB3 Lembang</option>
                     <option value='HT24005740'>Amethyst JB3a Lembang </option>
