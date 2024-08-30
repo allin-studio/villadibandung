@@ -183,6 +183,8 @@
                     '94': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005743&amp;lang=EN',
                     '97': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005736&amp;lang=EN',
                     '82': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005735&amp;lang=EN',
+                    '87': 'https://reservation.smartbooking-asia.com/Booking/Index.aspx?htlcccode=HCC2400197&lang=en',
+                    '94': 'https://reservation.smartbooking-asia.com/Booking/Index.aspx?htlcccode=HCC2400197&lang=en',
                     '81': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005698&amp%3blang=EN'
                 };
 
