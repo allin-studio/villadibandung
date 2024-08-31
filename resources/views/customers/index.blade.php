@@ -1,4 +1,4 @@
-<!-- /*
+{{--  <!-- /*
 * Template Name: Property
 * Template Author: Untree.co
 * Template URI: https://untree.co/
@@ -447,4 +447,4 @@ $(document).ready(function() {
 
 </script>
   </body>
-  </html>
+  </html>  --}}
