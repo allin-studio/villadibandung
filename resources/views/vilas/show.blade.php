@@ -14,7 +14,7 @@
   }
 </style>
 <!-- resources/views/vilas/show.blade.php -->
-@extends('layouts.app')
+@extends('layouts.custom')
 @section('content')
 <div class="container-fluid">
   <h1><center>{{ $vila->nama_vila }}</center></h1><table class="table">
