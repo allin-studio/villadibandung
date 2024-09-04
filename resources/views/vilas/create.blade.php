@@ -241,7 +241,7 @@
 
         <div class="col-md-6">
          <label for="foto">Foto</label>
-        <input type="file" name="foto[]" id="foto" multiple required>
+         <input type="file" name="foto[]" id="foto" multiple required>
         <br>
         </div>
         <button type="submit" class="submit-btn" class="form-tabel">Simpan</button>
@@ -252,6 +252,25 @@
 </div>
 @endsection
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const fotoInput = document.getElementById('foto');
+
+        fotoInput.addEventListener('change', function () {
+            const files = Array.from(fotoInput.files);
+
+            // Create a new DataTransfer object to hold the sorted files
+            const dataTransfer = new DataTransfer();
+
+            // Sort files based on their selection order
+            files.forEach(file => dataTransfer.items.add(file));
+
+            // Replace the input files with the sorted files
+            fotoInput.files = dataTransfer.files;
+        });
+    });
+    </script>
+
 </body>
 </html>
 
