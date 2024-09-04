@@ -84,8 +84,8 @@
     }
 
     img {
-        max-width: 100px;
-        max-height: 100px;
+        max-width: 70px;
+        max-height: 50px;
         margin-bottom: 5px;
         border: 1px solid #ddd;
         border-radius: 10px;
@@ -94,7 +94,7 @@
 </head>
 <body>
 <!-- resources/views/vilas/edit.blade.php -->
-    @extends('layouts.app')
+    @extends('layouts.custom')
     @section('content')
         <div class="sidebar-inner-slimscroll">
         <div class="container-fluid"  style="overflow-y: auto;">
