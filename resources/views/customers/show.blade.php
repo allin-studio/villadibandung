@@ -163,11 +163,10 @@
 
                         <div style="display: flex; justify-content: flex-start; gap: 15px;">
                             <a href="{{ route('createBookingForm', ['id' => $vila->id]) }}" class="btn btn-primary">Manual Booking</a>
-                            <a href="{{ route('reservation.details', ['id' => $vila->id]) }}" class="btn btn-primary">Online Booking</a>
+                            <a href="#" id="online-booking-btn" data-id="{{ $vila->id }}" class="btn btn-primary">Online Booking</a>
+                            {{--  <a href="{{ route('reservation.details', ['id' => $vila->id]) }}" class="btn btn-primary">Online Booking</a>  --}}
                         </div>
 
-
-                    {{--  <a href="{{ route('reservation.form') }}" class="btn btn-primary">Online Booking</a>  --}}
 
 				</div>
 			</div>
@@ -262,5 +261,47 @@
     <script src="{{ asset('js/navbar.js') }}"></script>
     <script src="{{ asset('js/counter.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
+
+    <script>
+        // Definisikan objek urlMap
+        var urlMap = {
+            '70': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005616&amp%3blang=EN',
+            '72': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005618&amp%3blang=EN',
+            '83': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005619&amp%3blang=EN',
+            '71': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005617&amp%3blang=EN',
+            '91': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005620&amp%3blang=EN',
+            '85': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005621&amp%3blang=EN',
+            '80': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005701&amp%3blang=EN',
+            '84': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005699&amp%3blang=EN',
+            '98': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005703&amp%3blang=EN',
+            '88': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005702&amp%3blang=EN',
+            '86': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005700&amp%3blang=EN',
+            '69': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005738&amp;lang=EN',
+            '68': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005746&amp;lang=EN',
+            '89': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005742&amp;lang=EN',
+            '96': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005740&amp;lang=EN',
+            '90': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005741&amp;lang=EN',
+            '103': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005739&amp;lang=EN',
+            '92': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005745&amp;lang=EN',
+            '94': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005744&amp%3blang=EN',
+            '97': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005736&amp;lang=EN',
+            '82': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005735&amp;lang=EN',
+            '87': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005737&amp%3blang=EN',
+            '81': 'https://reservation.smartbooking-asia.com/booking/index.aspx?hotelcd=HT24005698&amp%3blang=EN'
+        };
+
+        // Tangani klik pada tombol Online Booking
+        document.getElementById('online-booking-btn').addEventListener('click', function(event) {
+            event.preventDefault(); // Mencegah aksi default dari link
+            var villaId = this.getAttribute('data-id'); // Ambil ID dari atribut data-id
+            var url = urlMap[villaId]; // Dapatkan URL dari objek urlMap
+            if (url) {
+                window.location.href = url; // Arahkan ke URL yang sesuai
+            } else {
+                console.error('URL untuk ID villa ' + villaId + ' tidak ditemukan.');
+            }
+        });
+    </script>
+
   </body>
   </html>
